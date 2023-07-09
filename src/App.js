@@ -4,16 +4,10 @@ import { useEffect } from "react";
 import Loading from "./pages/Loading";
 import NotFound from "./pages/NotFound";
 import Main from "./pages/Main";
-import GlobalStyle from "./components/Globalstyle";
+
 
 const App = () => {
-  function setScreenSize() {
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
-  useEffect(() => {
-    setScreenSize();
-  });
+
   return (
     <BrowserRouter>
       <Routes>

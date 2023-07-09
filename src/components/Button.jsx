@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 const Button = styled.button`
-    width: ${(props) => (props.Buttonwidth ? props.Buttonwidth : "100px")};
-    height: ${(props) => (props.Buttonheight ? props.Buttonheight : "100px")};
+    width: ${(props) => (props.Buttonwidth ? props.Buttonwidth : "10%")};
+    height: ${(props) => (props.Buttonheight ? props.Buttonheight : "10%")};
     background-color: ${(props) => (props.ButtonColor ? props.ButtonColor : "white")};
     position: absolute;
     left:${(props) => (props.Buttonleft ? props.Buttonleft : "50%")};
@@ -15,6 +15,13 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-duration: 0.3s;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    :active{
+        margin-left: 5px;
+        margin-bottom: 5px;
+        box-shadow: none;
+    }
     @keyframes fadeout {
         from{
             opacity: 0;
@@ -23,6 +30,7 @@ const Button = styled.button`
             opacity: 1;
         }
     }
+
 `
 const ButtonText = styled.p`
     font-size: 15px;
@@ -30,6 +38,7 @@ const ButtonText = styled.p`
 
 `
 const button = (props) => {
+    const{onClick}=props;
     return (
         <>
         <Button Buttonheight = {props.Buttonheight}
@@ -40,7 +49,8 @@ const button = (props) => {
                 Buttonopacity = {props.Buttonopacity}
                 Buttonanimation = {props.Buttonanimation}
                 Buttonborder = {props.Buttonborder}
-                Buttonborderrad = {props.Buttonborderrad}>
+                Buttonborderrad = {props.Buttonborderrad}
+                onClick={props.onClick}>
             <ButtonText
              textcolor = {props.textcolor}>{props.text}</ButtonText>
         </Button>

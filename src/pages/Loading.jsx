@@ -7,10 +7,8 @@ const LogoImg = styled.img`
     background-color: none;
     width:300px;
     height:300px;
-    position: absolute;
-    left:22%;
-    top:32%;
-    transform: translate(-50%,-50%);
+    position: relative;
+    top:20%;
     animation: left-right 2s infinite ease-in-out alternate;
     @keyframes left-right{
         from{
@@ -22,13 +20,11 @@ const LogoImg = styled.img`
     }
 `
 const Loadtext = styled.p`
-    font-size: 10px;
-    position: absolute;
-    left:50%;
-    top:80%;
-    transform: translate(-50%,-50%);
+    font-size: 15px;
     text-align: center;
     animation: fadein 3s 2s ease-out forwards;
+    position: relative;
+    top:40%;
     @keyframes fadein {
         from{
             opacity: 1;
@@ -38,33 +34,41 @@ const Loadtext = styled.p`
         }
     }
 `
+
 const Loading = () => {
     const navigate = useNavigate(); 
+    const navigatetoMain = () => {
+    navigate("/Main");
+}
     return (
         <>
 
-        <Layout MainColor = '#FFF5E4'></Layout>
+        <Layout color = '#FFF5E4'>
         <LogoImg src='icon/Cakekku.png'></LogoImg>
         <Loadtext>케이꾸<br/>당신의 케이크를 직접꾸며보세요!</Loadtext>
         <Button 
-            Buttonwidth = "200px"
-            Buttonheight = "40px"
-            Buttontop = "82%"
+            Buttonwidth ="40%"
+            Buttonheight = "5%"
+            Buttontop = "72%"
             ButtonColor="#FFE3E1"
             Buttonanimation ="fadeout 2s 3s ease-in forwards"
             Buttonopacity = "0"
-            text="로그인하기">
+            text="로그인하기"
+            onClick={()=>alert("둘러보기를 눌러주세요~!")}>
             </Button>
         <Button
             Buttonwidth = "200px"
             Buttonheight = "40px"
-            Buttontop = "90%"
+            Buttontop = "80%"
             ButtonColor="transparent"
             Buttonanimation ="fadeout 2s 3s ease-in forwards"
             Buttonopacity = "0" 
             text="둘러보기"
-            onClick={()=>navigate("/Main")}>
+            onClick={navigatetoMain}
+
+            >
             </Button>
+        </Layout>
         </>
     );
 };
