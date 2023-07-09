@@ -60,6 +60,10 @@ const Line = styled.div`
     margin: 0 auto;
 `
 const Footer = () => {
+    const navigate = useNavigate(); 
+    const navigatetoMain = () => {navigate("/Main")};
+    const navigatetoMake = () => {navigate("/MakeCake")};
+    const navigatetoLike = () => {navigate("/MyLike")};
 
     return (
         
@@ -68,23 +72,23 @@ const Footer = () => {
         <Footerbox>
             <Line/>
             <ButtonBox>
-            <Footerbutton>
+            <Footerbutton onClick={navigatetoMain}>
             <GoHome color="pink" size="20px" />
             <Footertext>홈</Footertext>
             </Footerbutton>
-            <Footerbutton>
+            <Footerbutton >
             <BsCalendarHeart color="pink" size="20px" />
             <Footertext>예약확인</Footertext>
             </Footerbutton>
-            <Footerbutton>
+            <Footerbutton >
             <PiNotePencil color="pink" size="20px" />
             <Footertext>이용후기</Footertext>
             </Footerbutton>
-            <Footerbutton>
+            <Footerbutton onClick={navigatetoMake}>
             <PiCakeFill color="pink" size="20px" />
             <Footertext>케이꾸</Footertext>
             </Footerbutton> 
-            <Footerbutton>
+            <Footerbutton onClick={navigatetoLike}>
             <AiOutlineHeart color="pink" size="20px" />
             <Footertext>관심목록</Footertext>
             </Footerbutton>

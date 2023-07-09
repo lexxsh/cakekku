@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 import { FiSearch } from "react-icons/fi";
 import { BsPerson } from "react-icons/bs";
 import {BiArrowBack} from "react-icons/bi";
+import { useNavigate } from 'react-router-dom';
 const HeadBox = styled.div`
     width: 370px;
     height: 50px;
@@ -43,10 +44,14 @@ const LogoImg = styled.img`
     margin-left: -15%;
 `
 const Head2 = () => {
+    const navigate= useNavigate();
+    const onClickBtn = () => {
+        navigate(-1); // 바로 이전 페이지로 이동, '/main' 등 직접 지정도 당연히 가능
+      };
     return (
         <>
         <HeadBox>
-            <BackButton><BiArrowBack color="black" size="30px" /></BackButton>
+            <BackButton onClick={onClickBtn}><BiArrowBack color="black" size="30px" /></BackButton>
             <LogoImg src='icon/Cakekku.png'></LogoImg>
             <HeadMain>CakeKku</HeadMain>
             <HeadButton>

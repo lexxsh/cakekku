@@ -3,10 +3,9 @@ import styled from 'styled-components'
 
 const FirstBox = styled.div`
     height: 140px;
-    width:  350px;
+    width:  330px;
     opacity: 90%;
     background-color: #ffffff;
-    
     border-radius: 30px;
     margin: 0 auto;
     filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
@@ -112,9 +111,20 @@ letter-spacing: -0.5px;
     left:53%;
     top:70%;
 `
+
+const Container = styled.div`
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 const MarketBox = (props) => {
     return (
         <>
+        <Container>
         <FirstBox Firsttop = {props.Firsttop}>
             <ImgBox>
             <Marketname>메리고라운드</Marketname>
@@ -127,8 +137,8 @@ const MarketBox = (props) => {
             </HashBox2>
             </ImgBox>
             <MarketPrice>기본 16000 ~ 30000</MarketPrice>
-
         </FirstBox>
+        </Container>
         </>
     );
 };
