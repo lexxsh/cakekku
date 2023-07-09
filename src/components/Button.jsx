@@ -16,12 +16,6 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     transition-duration: 0.3s;
-    :active{
-        margin-left: 5px;
-        margin-bottom: 5px;
-        box-shadow: none;
-        opacity: 50%;
-    }
     @keyframes fadeout {
         from{
             opacity: 0;

@@ -15,7 +15,7 @@ const Footerbox = styled.div`
   position: fixed;
   bottom: 0;
   z-index: 2;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0 -5px 5px -5px #a6a6a6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@ const ButtonBox= styled.div`
         box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
     }
 `
-const Footerbutton = styled.button`
+const Footerbutton = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -38,7 +38,10 @@ const Footerbutton = styled.button`
     border: none;
     margin-top:5%;
     width: 20%;
-    
+    :active{
+        box-shadow: none;
+        background-color: green;
+    }
 `
 const Footertext = styled.div`
   font-size: 12px;
@@ -64,7 +67,8 @@ const Footer = () => {
     const navigatetoMain = () => {navigate("/Main")};
     const navigatetoMake = () => {navigate("/MakeCake")};
     const navigatetoLike = () => {navigate("/MyLike")};
-
+    const navigatetoReser = () => {navigate("/Reservation")};
+    const navigatetoMyre = () => {navigate("/Myreview")};
     return (
         
         <>
@@ -76,11 +80,11 @@ const Footer = () => {
             <GoHome color="pink" size="20px" />
             <Footertext>홈</Footertext>
             </Footerbutton>
-            <Footerbutton >
+            <Footerbutton onClick={navigatetoReser}>
             <BsCalendarHeart color="pink" size="20px" />
             <Footertext>예약확인</Footertext>
             </Footerbutton>
-            <Footerbutton >
+            <Footerbutton onClick={navigatetoMyre}>
             <PiNotePencil color="pink" size="20px" />
             <Footertext>이용후기</Footertext>
             </Footerbutton>

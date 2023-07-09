@@ -7,6 +7,7 @@ import Review from './review';
 import Storetag from '../../components/Store.jsx/Storetag'
 import Storedetail from '../../components/Store.jsx/Storedetail';
 import { AiFillStar } from "react-icons/ai";
+import Head from '../../components/Heads/Head';
 import axios from 'axios';
 
 

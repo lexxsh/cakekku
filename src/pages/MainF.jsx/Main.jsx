@@ -7,6 +7,7 @@ import MarketBox from '../../components/MaketBox';
 import Head from '../../components/Heads/Head';
 import Wrapper from '../../components/Wrapper';
 import TopWrapper from '../../components/TopWrapper';
+import {Link} from 'react-router-dom';
 const Main = () => {
     return ( 
         <>
@@ -16,7 +17,7 @@ const Main = () => {
         <MainTop></MainTop>
         </TopWrapper>
         <Wrapper>
-        <MarketBox></MarketBox>
+        <Link to = "/Store"><MarketBox></MarketBox></Link>
         <MarketBox></MarketBox>
         <MarketBox></MarketBox>
         <MarketBox></MarketBox>

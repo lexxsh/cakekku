@@ -48,6 +48,12 @@ const Head2 = () => {
     const onClickBtn = () => {
         navigate(-1); // 바로 이전 페이지로 이동, '/main' 등 직접 지정도 당연히 가능
       };
+      const onClickBtn2 = () => {
+        navigate("/Search"); // 검색페이지 이동
+      }
+      const onClickBtn3 = () => {
+        navigate("/MyPage"); // 검색페이지 이동
+      }
     return (
         <>
         <HeadBox>
@@ -55,8 +61,8 @@ const Head2 = () => {
             <LogoImg src='icon/Cakekku.png'></LogoImg>
             <HeadMain>CakeKku</HeadMain>
             <HeadButton>
-                <HeadButtons><BsPerson color="black" size="30px" /></HeadButtons>
-                <HeadButtons><FiSearch color="black" size="30px" /></HeadButtons>
+                <HeadButtons onClick={onClickBtn3}><BsPerson color="black" size="30px" /></HeadButtons>
+                <HeadButtons onClick={onClickBtn2}><FiSearch color="black" size="30px" /></HeadButtons>
             </HeadButton>
         </HeadBox>
         </>

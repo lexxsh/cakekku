@@ -9,13 +9,17 @@ const FirstBox = styled.div`
     border-radius: 30px;
     margin: 0 auto;
     filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
+    :active{
+        box-shadow: none;
+        opacity: 50%;
+    }
 `
 const ImgBox = styled.div`
     height: 140px;
     width:  140px;
     border-radius: 30px;
     background-color: skyblue;
-    
+
 `
 const Marketname = styled.p`
     margin: 0;

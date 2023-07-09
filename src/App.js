@@ -9,6 +9,11 @@ import Search from "./pages/Search"
 import GlobalStyle from "./components/Globalstyle";
 import MakeCake from "./pages/MakeCake";
 import MyLike from "./pages/MyLike";
+import Reservation from "./pages/Reservation";
+import Myreivew from "./pages/Myreview";
+import MyPage from "./pages/MyPage";
+import Reservationdetail from "./pages/Reservationpage/detail1"
+
 
 const App = () => {
   function setScreenSize() {
@@ -27,6 +32,10 @@ const App = () => {
         <Route path="/Store" element={<Store />} />
         <Route path="/MakeCake" element={<MakeCake />} />
         <Route path="/MyLike" element={<MyLike />} />
+        <Route path="/Reservation" element={<Reservation />} />
+        <Route path="/Myreview" element={<Myreivew />} />
+        <Route path="/MyPage" element={<MyPage />} />
+        <Route path="/Reservation/detail1" element={<Reservationdetail/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

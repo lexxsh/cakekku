@@ -15,7 +15,7 @@ const Box = styled.div`
     align-content: space-evenly;
     justify-content: space-evenly;
     overflow-x: scroll;
-    filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.10);
 `  
 
 const Wrapper = ({children}) => {
