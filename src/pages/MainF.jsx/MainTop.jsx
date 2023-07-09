@@ -20,8 +20,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "12%"
-            Buttonleft = "22%"
+            Buttontop = "105px"
+            Buttonleft = "85px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #FF9494"
             Buttonborderrad = "10px"
@@ -32,8 +32,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
-            Buttontop = "12%"
-            Buttonleft = "48%"
+            Buttontop = "105px"
+            Buttonleft = "180px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
             Buttonborderrad = "10px"
@@ -42,8 +42,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
-            Buttontop = "12%"
-            Buttonleft = "68%"
+            Buttontop = "105px"
+            Buttonleft = "260px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
             Buttonborderrad = "10px"
@@ -56,6 +56,7 @@ const MainTop = () => {
             Buttonleft = "22%"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
+            Buttonleft = "85px"
             text="쿠폰할인"
             textcolor = "#FFFFFF"></Button>
             <Button
