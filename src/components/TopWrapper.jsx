@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 const Box = styled.div`
     width: 350px;
-    height: 100vh;
+    height: 200px;
     background-color: rgba(255, 255, 255, 0.50);
     margin: 0 auto;    
-    margin-top:20px;
-    margin-bottom:75px;
+    margin-top:70px;
+    margin-bottom:0px;
     border-radius: 30px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -18,7 +18,7 @@ const Box = styled.div`
     filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
 `  
 
-const Wrapper = ({children}) => {
+const TopWrapper = ({children}) => {
     return (
         <>
        <Box>{children}</Box>
@@ -26,4 +26,4 @@ const Wrapper = ({children}) => {
     );
 };
 
-export default Wrapper;
+export default TopWrapper;

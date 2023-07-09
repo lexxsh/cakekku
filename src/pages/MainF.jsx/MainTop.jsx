@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../components/Button';
 import  styled  from 'styled-components';
+
 const MaintopBox = styled.div`
 width: 370px;
 height: 130px;
@@ -16,12 +17,11 @@ filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
 const MainTop = () => {
     return (
         <>
-        <MaintopBox>
-            </MaintopBox>
+        
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "105px"
+            Buttontop = "40px"
             Buttonleft = "85px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #FF9494"
@@ -33,7 +33,7 @@ const MainTop = () => {
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
-            Buttontop = "105px"
+            Buttontop = "40px"
             Buttonleft = "180px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
@@ -43,7 +43,7 @@ const MainTop = () => {
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
-            Buttontop = "105px"
+            Buttontop = "40px"
             Buttonleft = "260px"
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
@@ -53,7 +53,7 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "165px"
+            Buttontop = "95px"
             Buttonleft = "85px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
@@ -62,7 +62,7 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "165px"
+            Buttontop = "95px"
             Buttonleft = "195px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
@@ -71,8 +71,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "80px"
             Buttonheight = "45px"
-            Buttontop = "165px"
-            Buttonleft = "350px"
+            Buttontop = "95px"
+            Buttonleft = "300px"
             ButtonColor="Transparent"
             Buttonborderrad = "10px"
             text="별점 순 👇"></Button>
