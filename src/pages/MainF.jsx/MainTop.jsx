@@ -12,6 +12,7 @@ border-radius: 20px;
 margin-top: 15%;
 filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
 `
+
 const MainTop = () => {
     return (
         <>
@@ -52,18 +53,17 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "19%"
-            Buttonleft = "22%"
+            Buttontop = "165px"
+            Buttonleft = "85px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
-            Buttonleft = "85px"
             text="쿠폰할인"
             textcolor = "#FFFFFF"></Button>
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "19%"
-            Buttonleft = "51%"
+            Buttontop = "165px"
+            Buttonleft = "195px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
             text="주간랭킹"
@@ -71,8 +71,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "80px"
             Buttonheight = "45px"
-            Buttontop = "19%"
-            Buttonleft = "85%"
+            Buttontop = "165px"
+            Buttonleft = "350px"
             ButtonColor="Transparent"
             Buttonborderrad = "10px"
             text="별점 순 👇"></Button>
