@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 const Background = styled.div`
@@ -31,6 +32,5 @@ const Layout = ({ children, color }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
 
 export default Layout;
