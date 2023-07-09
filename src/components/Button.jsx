@@ -16,11 +16,11 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     transition-duration: 0.3s;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     :active{
         margin-left: 5px;
         margin-bottom: 5px;
         box-shadow: none;
+        opacity: 50%;
     }
     @keyframes fadeout {
         from{
@@ -52,7 +52,8 @@ const button = (props) => {
                 Buttonborderrad = {props.Buttonborderrad}
                 onClick={props.onClick}>
             <ButtonText
-             textcolor = {props.textcolor}>{props.text}</ButtonText>
+             textcolor = {props.textcolor}
+             fontsize={props.fontsize}>{props.text}</ButtonText>
         </Button>
         </>
     );

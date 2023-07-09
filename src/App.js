@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import Loading from "./pages/Loading";
 import NotFound from "./pages/NotFound";
-import Main from "./pages/Main";
+import Main from "./pages/MainF.jsx/Main";
+import Store from "./pages/Store/Store"
 import GlobalStyle from "./components/Globalstyle";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/Loading" element={<Loading />} />
         <Route path="/Main" element={<Main />} />
+        <Route path="/Store" element={<Store />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

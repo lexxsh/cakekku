@@ -30,7 +30,10 @@ const CButton = styled.div`
     display: flex; 
     align-items: center;
     justify-content: center; 
-    margin: 0px 0px;  
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
 `;
 
 const Storename = styled.p`
