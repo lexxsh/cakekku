@@ -4,7 +4,8 @@ const AppLayout  = styled.div`
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     background-color:${(props) => (props.MainColor ? props.MainColor : "pink")};
-    overflow-y:hidden;
+    overflow : auto; 
+    
 `
 const Layout = (props) => {
     return (
