@@ -56,8 +56,8 @@ const Boxicon = styled.div`
     flex-direction: row;
 `
 const Boxicons = styled.div`
-    margin-left:30px;
-`
+    margin:17px;
+    `
 const BoxLink = styled.div`
     
 `

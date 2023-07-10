@@ -7,6 +7,8 @@ const Box = styled.div`
     background-color: rgba(255, 255, 255, 0.50);
     margin: 0 auto;
     margin-top: ${(props) => (props.Top ? props.Top : "20px")};
+    //display: ${(props)=>(props.display ? props.display : "none")};
+    //position: ${(props)=>(props.position ? props.position : "none")};
     margin-bottom: ${(props) => (props.Bottom ? props.Bottom : "75px")};
     border-radius: 30px;
     flex-direction: row;
@@ -18,10 +20,10 @@ const Box = styled.div`
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.10), 0 15px 12px rgba(0, 0, 0, 0.10);
 `;
 
-const Wrapper = ({ children, Top, Bottom }) => {
+const Wrapper = ({ children, Top, Bottom, display, position }) => {
     return (
         <>
-            <Box Top={Top} Bottom={Bottom}>
+            <Box Top={Top} Bottom={Bottom} display ={display} position={position}>
                 {children}
             </Box>
         </>

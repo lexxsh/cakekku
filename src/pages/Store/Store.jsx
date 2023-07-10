@@ -7,7 +7,7 @@ import Review from './review';
 import Storetag from '../../components/Store.jsx/Storetag'
 import Storedetail from '../../components/Store.jsx/Storedetail';
 import { AiFillStar } from "react-icons/ai";
-import Head from '../../components/Heads/Head';
+import Head from '../../components/Heads/Head2';
 import axios from 'axios';
 
 
@@ -19,7 +19,7 @@ const StoreImg = styled.img`
   flex-shrink: 0;
   position: relative;
   left: 50%;
-  margin-top:50px;
+  margin-top:60px;
   transform: translateX(-50%);
 `;
 
