@@ -17,7 +17,6 @@ filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
 const MainTop = () => {
     return (
         <>
-        
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
@@ -53,7 +52,7 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "95px"
+            Buttontop = "90px"
             Buttonleft = "85px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
@@ -62,7 +61,8 @@ const MainTop = () => {
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
-            Buttontop = "95px"
+            Buttontop = "90px"
+            Button
             Buttonleft = "195px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
@@ -71,12 +71,11 @@ const MainTop = () => {
             <Button
             Buttonwidth = "80px"
             Buttonheight = "45px"
-            Buttontop = "95px"
+            Buttontop = "90px"
             Buttonleft = "300px"
             ButtonColor="Transparent"
             Buttonborderrad = "10px"
             text="별점 순 👇"></Button>
-           
             </>
     );
 };

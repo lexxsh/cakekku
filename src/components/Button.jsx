@@ -7,6 +7,7 @@ const Button = styled.button`
     position: absolute;
     left:${(props) => (props.Buttonleft ? props.Buttonleft : "50%")};
     top:${(props) => (props.Buttontop ? props.Buttontop : "50%")};
+    bottom:${(props) => (props.Buttonbottom ? props.Buttonbottom : "none")};
     transform: translate(-50%,-50%);
     border:${(props) => (props.Buttonborder ? props.Buttonborder : "none")};
     border-radius:${(props) => (props.Buttonborderrad ? props.Buttonborderrad : "20px")};
@@ -40,6 +41,7 @@ const button = (props) => {
                 ButtonColor = {props.ButtonColor}
                 Buttonleft = {props.Buttonleft}
                 Buttontop = {props.Buttontop}
+                Buttonbottom = {props.Buttonbottom}
                 Buttonopacity = {props.Buttonopacity}
                 Buttonanimation = {props.Buttonanimation}
                 Buttonborder = {props.Buttonborder}

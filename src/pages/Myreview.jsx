@@ -39,22 +39,51 @@ const Reser1Box=styled.div`
     margin-top: 5px;
 `
 const ReserButton = styled.div`
-    margin-left: 40px;
-    margin-bottom: -10px;
-    padding: 10px;
+    padding: 8px;
     background-color: #FFE3E1;
     border-radius: 30px;
-    width: 70px;
+    width: 75px;
+    height: 10px;
+    flex-shrink: 0;
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: 10px;
+letter-spacing: -0.5px;
 `
 const ReserTitle = styled.p`
     margin-bottom: -5px;
+    color: #000;
+//text-align: center;
+font-family: Inter;
+font-size: 11px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const ReserBody = styled.p`
-    
+    color: #747272;
+font-family: Inter;
+font-size: 8px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const ReserDate = styled.p`
     margin: 0px;
     margin-left: 80px;
+    color: #C8C8C8;
+font-family: Inter;
+font-size: 8px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const Myreview = () => {
     return (

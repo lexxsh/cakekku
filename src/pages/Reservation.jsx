@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import Head2 from '../components/Heads/Head2';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
+import Wrapper from '../components/Wrapper';
+
 const Box = styled.div`
         width: 350px;
     height: 700px;
@@ -39,22 +41,54 @@ const Reser1Box=styled.div`
     margin-top: 5px;
 `
 const ReserButton = styled.div`
-    margin-left: 40px;
-    margin-bottom: -10px;
-    padding: 10px;
+    //margin-left: 0px;
+    //margin-bottom: -10px;
+    padding: 8px;
     background-color: #FFE3E1;
     border-radius: 30px;
-    width: 70px;
+    width: 75px;
+    height: 10px;
+    flex-shrink: 0;
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 600;
+line-height: 10px;
+letter-spacing: -0.5px;
 `
 const ReserTitle = styled.p`
     margin-bottom: -5px;
+    color: #000;
+//text-align: center;
+font-family: Inter;
+font-size: 11px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const ReserBody = styled.p`
+color: #747272;
+font-family: Inter;
+font-size: 8px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
     
 `
 const ReserDate = styled.p`
     margin: 0px;
     margin-left: 80px;
+    color: #C8C8C8;
+font-family: Inter;
+font-size: 8px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const Reservation = () => {
     return (
