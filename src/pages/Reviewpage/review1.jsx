@@ -4,17 +4,27 @@ import Footer from '../../components/Footer';
 import { styled } from 'styled-components';
 import Layout from '../../components/Layout';
 import {BiLoader} from "react-icons/bi";
-import Loadingani from './Loadingani';
 
 const ResTtitle = styled.p`
-    color: #000;
+color: #FF9494;
 text-align: center;
-font-family: Preahvihear;
-font-size: 24px;
+font-family: Inter;
+font-size: 20px;
 font-style: normal;
-font-weight: 400;
-line-height: 34px;
-letter-spacing: -0.6px;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
+`
+
+const ResTtitle2 = styled.p`
+color: #747272;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
 `
 const Box = styled.div`
         width: 350px;
@@ -29,58 +39,6 @@ const Box = styled.div`
     align-items: center;
     align-content: space-evenly;
 `  
-const Circlebox = styled.div`
-    display: flex;
-    flex-direction: row;
-    z-index: 5;
-    
-`
-const Circle1 = styled.div`
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    border-radius: 50%;
-    margin:20px;
-`
-const Circle2 = styled.div`
-    width: 20px;
-    height: 20px;
-    background-color: #D9D9D9;
-    border-radius: 50%;
-    margin:20px;
-`
-const Circle3 = styled.div`
-    width: 20px;
-    height: 20px;
-    background-color: #D9D9D9;
-    border-radius: 50%;
-    margin:20px;
-`
-const Circle4 = styled.div`
-    width: 20px;
-    height: 20px;
-    background-color: #D9D9D9;
-    border-radius: 50%;
-    margin:20px;
-`
-const Line1=styled.div`
-    width: 50px;
-    height: 2px;
-    background-color: #D9D9D9;
-    margin-left:30px;
-`
-const Line2=styled.div`
-    width: 60px;
-    height: 2px;
-    background-color: #D9D9D9;
-    margin-left:10px;
-`
-const Line3=styled.div`
-    width: 40px;
-    height: 2px;
-    background-color: #D9D9D9;
-    margin-left:0px;
-`
 const Linebox = styled.div`
     display: flex;
     flex-direction: row;
@@ -141,23 +99,12 @@ const MainCircle = styled.div`
     border-radius: 50%;
     margin:20px;
 `
-const detail1 = () => {
+const review1 = () => {
     return (
         <><Layout color="white">
         <Head2></Head2>
         <Box>
-            <ResTtitle>예약 진행상황</ResTtitle>
-            <Circlebox>
-                <Circle1></Circle1>
-                <Circle2></Circle2>
-                <Circle3></Circle3>
-                <Circle4></Circle4>
-            </Circlebox>
-            <Linebox>
-                <Line1></Line1>
-                <Line2></Line2>
-                <Line3></Line3>
-            </Linebox>
+            <ResTtitle>케이크니<ResTtitle2>의 케이크 어땠나요?</ResTtitle2></ResTtitle>
             <Lineboxtext>
                 <LineText>대기</LineText>
                 <LineText>상담</LineText>
@@ -165,7 +112,7 @@ const detail1 = () => {
                 <LineText>완료</LineText>
             </Lineboxtext>  
             <MainCircle>
-            <Loadingani></Loadingani>
+            <BiLoader size="150px" color="#FF9494"></BiLoader>
                 </MainCircle> 
 
             <Container>
@@ -189,4 +136,4 @@ const detail1 = () => {
     );
 };
 
-export default detail1;
+export default review1;
