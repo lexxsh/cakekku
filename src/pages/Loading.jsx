@@ -5,8 +5,8 @@ import Button from '../components/Button';
 import styled from 'styled-components'
 const LogoImg = styled.img`
     background-color: none;
-    width:300px;
-    height:300px;
+    width:200px;
+    height:200px;
     position: relative;
     top:20%;
     animation: left-right 2s infinite ease-in-out alternate;

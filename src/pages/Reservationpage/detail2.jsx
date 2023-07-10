@@ -3,7 +3,7 @@ import Head2 from '../../components/Heads/Head2';
 import Footer from '../../components/Footer';
 import { styled } from 'styled-components';
 import Layout from '../../components/Layout';
-import {BiLoader} from "react-icons/bi";
+import {AiFillWechat} from "react-icons/ai";
 
 const ResTtitle = styled.p`
     color: #000;
@@ -37,14 +37,14 @@ const Circlebox = styled.div`
 const Circle1 = styled.div`
     width: 20px;
     height: 20px;
-    background-color: pink;
+    background-color: #FF9494;
     border-radius: 50%;
     margin:20px;
 `
 const Circle2 = styled.div`
     width: 20px;
     height: 20px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     border-radius: 50%;
     margin:20px;
 `
@@ -65,7 +65,7 @@ const Circle4 = styled.div`
 const Line1=styled.div`
     width: 50px;
     height: 2px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     margin-left:30px;
 `
 const Line2=styled.div`
@@ -103,16 +103,6 @@ margin:20px;
 margin-top: 30px;
 `
 
-const TextBox = styled.div`
-    width: 266px;
-    flex-shrink: 0;
-    flex-shrink: 0;
-    border-radius: 24px;
-    margin: 0 auto;
-    stroke-width: 1px;
-    stroke: #8F8F8F;
-`
-
 const Container = styled.div`
   //background-color: #ffffff;
   padding: 10px;
@@ -140,7 +130,28 @@ const MainCircle = styled.div`
     border-radius: 50%;
     margin:20px;
 `
-const detail1 = () => {
+const Button = styled.button`
+    width: 246px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFD7D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30px;
+    border: 1px solid #FF9494;
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
+`
+
+const detail2 = () => {
     return (
         <><Layout color="white">
         <Head2></Head2>
@@ -164,23 +175,21 @@ const detail1 = () => {
                 <LineText>완료</LineText>
             </Lineboxtext>  
             <MainCircle>
-            <BiLoader size="150px" color="#FF9494"></BiLoader>
+            <AiFillWechat size="150px" color="#FF9494"></AiFillWechat>
                 </MainCircle> 
 
             <Container>
                 <Text>
                     <br/>
-                주문하신 케이크정보에 대해서 검토중입니다.<br/>
-                이 작업은 최소 5분에서 최대 1시간가량 소요됩니다.<br/>
-                <br/>
-                판매자가 검토 후 상담 화면으로 변경 됩니다.<br/>
-                <br/>
-                만약 1시간이 지난 후에도 이 화면이 유지된다면<br/>
-                아래의 전화번호로 문의해주세요!<br/>
+                    주문하신 내용에 관해 상담이 필요합니다.<br/>
+                    <br/>
+                    아래 오픈카카오채팅 방을 이용하여 예약하신 <br/>
+                    성함, 전화번호를 남겨주신 다면 최대한 빠르게<br/>
+                    상담을 도와드리겠습니다.<br/>
                 <br/>
                 </Text>
             </Container>
-            
+            <Button>바로가기</Button>
         </Box>
         <Footer></Footer>
         </Layout>
@@ -188,4 +197,4 @@ const detail1 = () => {
     );
 };
 
-export default detail1;
+export default detail2;

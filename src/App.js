@@ -12,7 +12,8 @@ import MyLike from "./pages/MyLike";
 import Reservation from "./pages/Reservation";
 import Myreivew from "./pages/Myreview";
 import MyPage from "./pages/MyPage";
-import Reservationdetail from "./pages/Reservationpage/detail1"
+import Reservationdetail from "./pages/Reservationpage/detail1";
+import Reservationdetail2 from "./pages/Reservationpage/detail2";
 
 
 const App = () => {
@@ -35,7 +36,8 @@ const App = () => {
         <Route path="/Reservation" element={<Reservation />} />
         <Route path="/Myreview" element={<Myreivew />} />
         <Route path="/MyPage" element={<MyPage />} />
-        <Route path="/Reservation/detail1" element={<Reservationdetail/>} />
+        <Route path="/Reservation/detail1" element={<Reservationdetail/>}/>
+        <Route path="/Reservation/detail2" element={<Reservationdetail2/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

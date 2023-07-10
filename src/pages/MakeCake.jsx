@@ -29,7 +29,7 @@ const MakeCake = () => {
     <>
       <Layout color="#FFF5E4">
         <Head2></Head2>
-        <Wrapper Top="100px" Bottom="90px" position="relative" display="flex">
+        <Wrapper Top="100px" Bottom="90px">
           <CakeBoxContainer>
             <CakeBox></CakeBox>
             <CakeBox></CakeBox>

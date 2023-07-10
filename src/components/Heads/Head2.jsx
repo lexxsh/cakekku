@@ -4,6 +4,8 @@ import { FiSearch } from "react-icons/fi";
 import { BsPerson } from "react-icons/bs";
 import {BiArrowBack} from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
+import Logo from '../../Cakekku.png';
+
 const HeadBox = styled.div`
     width: 370px;
     height: 50px;
@@ -18,7 +20,7 @@ const HeadBox = styled.div`
 const HeadMain = styled.h1`
     font-size: 26px;
     position: relative;
-    left:-18%;
+    left:-13%;
     display: flex;
     align-items: center;
 
@@ -32,16 +34,18 @@ const BackButton = styled.button`
     background-color: transparent;
     border: none;
     margin-top: 2%;
+    z-index:1;
 `
 const HeadButton = styled.div`
     
 `
 const LogoImg = styled.img`
     background-color: none;
-    width:95px;
-    height:95px;
-    margin-top: -3%;
-    margin-left: -15%;
+    width:32px;
+    height:32px;
+    margin-top: 2%;
+    margin-left: -16%;
+    z-index: 0;
 `
 const Head2 = () => {
     const navigate= useNavigate();
@@ -58,7 +62,7 @@ const Head2 = () => {
         <>
         <HeadBox>
             <BackButton onClick={onClickBtn}><BiArrowBack color="black" size="30px" /></BackButton>
-            <LogoImg src='icon/Cakekku.png'></LogoImg>
+            <LogoImg src={Logo}></LogoImg>
             <HeadMain>CakeKku</HeadMain>
             <HeadButton>
                 <HeadButtons onClick={onClickBtn3}><BsPerson color="black" size="30px" /></HeadButtons>
