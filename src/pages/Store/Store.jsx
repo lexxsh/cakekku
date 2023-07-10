@@ -19,6 +19,7 @@ const StoreImg = styled.img`
   flex-shrink: 0;
   position: relative;
   left: 50%;
+  margin-top:50px;
   transform: translateX(-50%);
 `;
 
@@ -112,6 +113,7 @@ function Store() {
  
     return (
         <>
+        <Head></Head>
             <StoreImg src='icon/Store_ex.png' />
             <Container>
                 <Storename>

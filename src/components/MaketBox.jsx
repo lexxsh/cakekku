@@ -9,17 +9,13 @@ const FirstBox = styled.div`
     border-radius: 30px;
     margin: 0 auto;
     filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
-    :active{
-        box-shadow: none;
-        opacity: 50%;
-    }
 `
 const ImgBox = styled.div`
     height: 140px;
     width:  140px;
     border-radius: 30px;
     background-color: skyblue;
-
+    
 `
 const Marketname = styled.p`
     margin: 0;
@@ -118,8 +114,8 @@ letter-spacing: -0.5px;
 
 const Container = styled.div`
     margin: 0 auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: ${(props) => (props.Top ? props.Top : "30px")};
+    margin-bottom: ${(props) => (props.Bottom ? props.Bottom : "30px")};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -128,7 +124,9 @@ const Container = styled.div`
 const MarketBox = (props) => {
     return (
         <>
-        <Container>
+        <Container 
+        Top={props.Top} 
+        Bottom={props.Bottom}>
         <FirstBox Firsttop = {props.Firsttop}>
             <ImgBox>
             <Marketname>메리고라운드</Marketname>
