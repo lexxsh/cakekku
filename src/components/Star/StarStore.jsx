@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-function StarRate(props) {
+function StarStore(props) {
     const AVR_RATE = 4.3*20;
     const STAR_IDX_ARR = ['first', 'second', 'third', 'fourth', 'last'];
     const [ratesResArr, setRatesResArr] = useState([0, 0, 0, 0, 0]);
@@ -45,7 +45,7 @@ function StarRate(props) {
     )
 }
 
-export default StarRate;
+export default StarStore;
 
 const StarRateWrap = styled.div`
         display: flex;
@@ -57,7 +57,7 @@ const StarRateWrap = styled.div`
           margin-right: 5px;
         }
         position: absolute;
-        top:${(props) => (props.StarTop ? props.StarTop : "50%")};
+        top:${(props) => (props.StarTop ? props.StarTop : "10%")};
         left:${(props) => (props.Starleft ? props.Starleft : "50%")};
         z-index: 1;
 

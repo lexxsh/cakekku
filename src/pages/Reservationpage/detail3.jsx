@@ -3,8 +3,7 @@ import Head2 from '../../components/Heads/Head2';
 import Footer from '../../components/Footer';
 import { styled } from 'styled-components';
 import Layout from '../../components/Layout';
-import {BiLoader} from "react-icons/bi";
-import Loadingani from './Loadingani';
+import {BsFillCreditCard2BackFill} from "react-icons/bs";
 
 const ResTtitle = styled.p`
     color: #000;
@@ -45,14 +44,14 @@ const Circle1 = styled.div`
 const Circle2 = styled.div`
     width: 20px;
     height: 20px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     border-radius: 50%;
     margin:20px;
 `
 const Circle3 = styled.div`
     width: 20px;
     height: 20px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     border-radius: 50%;
     margin:20px;
 `
@@ -66,13 +65,13 @@ const Circle4 = styled.div`
 const Line1=styled.div`
     width: 50px;
     height: 2px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     margin-left:30px;
 `
 const Line2=styled.div`
     width: 60px;
     height: 2px;
-    background-color: #D9D9D9;
+    background-color: #FF9494;
     margin-left:10px;
 `
 const Line3=styled.div`
@@ -104,16 +103,6 @@ margin:20px;
 margin-top: 30px;
 `
 
-const TextBox = styled.div`
-    width: 266px;
-    flex-shrink: 0;
-    flex-shrink: 0;
-    border-radius: 24px;
-    margin: 0 auto;
-    stroke-width: 1px;
-    stroke: #8F8F8F;
-`
-
 const Container = styled.div`
   //background-color: #ffffff;
   padding: 10px;
@@ -140,8 +129,36 @@ const MainCircle = styled.div`
     background-color: #D9D9D9;
     border-radius: 50%;
     margin:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
-const detail1 = () => {
+const Button = styled.button`
+    width: 130px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    background: #FFD7D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:30px;
+    border: 1px solid #FF9494;
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: -0.5px;
+margin: 10px;
+`
+const ButtonBox = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+const detail3 = () => {
     return (
         <><Layout color="white">
         <Head2></Head2>
@@ -165,23 +182,26 @@ const detail1 = () => {
                 <LineText>완료</LineText>
             </Lineboxtext>  
             <MainCircle>
-            <Loadingani></Loadingani>
+            <BsFillCreditCard2BackFill size="100px" color="#FF9494"></BsFillCreditCard2BackFill>
                 </MainCircle> 
 
             <Container>
                 <Text>
                     <br/>
-                주문하신 케이크정보에 대해서 검토중입니다.<br/>
-                이 작업은 최소 5분에서 최대 1시간가량 소요됩니다.<br/>
-                <br/>
-                판매자가 검토 후 상담 화면으로 변경 됩니다.<br/>
-                <br/>
-                만약 1시간이 지난 후에도 이 화면이 유지된다면<br/>
-                아래의 전화번호로 문의해주세요!<br/>
+                    주문이 거의 완료 되었습니다!<br/>
+                    <br/>
+                    결제 내역:<br/>
+                    종류: 도시락 케이크<br/>
+                    추가옵션: 하트초, 미니 보냉백<br/>
+                    결제 가격: 12억<br/>
+                    무통장입금: 신한 110-498-715570 이상혁
                 <br/>
                 </Text>
             </Container>
-            
+            <ButtonBox>
+            <Button>카카오페이</Button>
+            <Button>네이버페이</Button>
+            </ButtonBox>
         </Box>
         <Footer></Footer>
         </Layout>
@@ -189,4 +209,4 @@ const detail1 = () => {
     );
 };
 
-export default detail1;
+export default detail3;

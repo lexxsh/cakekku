@@ -14,6 +14,8 @@ import Myreivew from "./pages/Myreview";
 import MyPage from "./pages/MyPage";
 import Reservationdetail from "./pages/Reservationpage/detail1";
 import Reservationdetail2 from "./pages/Reservationpage/detail2";
+import Reservationdetail3 from "./pages/Reservationpage/detail3";
+import Reservationdetail4 from "./pages/Reservationpage/detail4";
 import Review1 from "./pages/Reviewpage/review1"
 
 
@@ -39,6 +41,8 @@ const App = () => {
         <Route path="/MyPage" element={<MyPage />} />
         <Route path="/Reservation/detail1" element={<Reservationdetail/>}/>
         <Route path="/Reservation/detail2" element={<Reservationdetail2/>}/>
+        <Route path="/Reservation/detail3" element={<Reservationdetail3/>}/>
+        <Route path="/Reservation/detail4" element={<Reservationdetail4/>}/>
         <Route path="/Myreview/review1" element={<Review1/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -4,14 +4,14 @@ import Head2 from '../components/Heads/Head2';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Wrapper from '../components/Wrapper';
- 
+import StarReivew from '../components/Star/StarReivew';
 const ReserBox = styled.div`
     display: flex;
     flex-direction: row;
     border-width: 0px 0px 5px 0px ;
     border-style: solid;
     border-color: rgba(200, 200, 200, 0.80);
-    margin-top:25px
+    margin-top:25px;
     
 `
 const ReserImg = styled.img`
@@ -113,6 +113,7 @@ const Myreview = () => {
                     <ReserDate>2022-13-24</ReserDate>
                 </Reser1Box>
             </ReserBox>
+            <StarReivew></StarReivew>
             </Wrapper>
             <Footer></Footer>
         </Layout>

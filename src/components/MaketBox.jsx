@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import StarMarketbox from './Star/StarMaketbox';
 
 const FirstBox = styled.div`
     height: 140px;
@@ -98,7 +99,7 @@ const Hashtag = styled.p`
 `;
 
 const MarketPrice = styled.p`
-    color: #000;
+color: #000;
 text-align: center;
 font-family: Inter;
 font-size: 15px;
@@ -109,7 +110,7 @@ letter-spacing: -0.5px;
     margin: 0;
     position: absolute;
     left:53%;
-    top:70%;
+    top:80%;
 `
 
 const Container = styled.div`
@@ -131,6 +132,7 @@ const MarketBox = (props) => {
             <ImgBox>
             <Marketname>메리고라운드</Marketname>
             <Marketaddres>인천 남동구 문화서로28번길 22</Marketaddres>
+
             <HashBox>
                 <Hashtag>입체케이크</Hashtag>
             </HashBox>
@@ -139,6 +141,7 @@ const MarketBox = (props) => {
             </HashBox2>
             </ImgBox>
             <MarketPrice>기본 16000 ~ 30000</MarketPrice>
+            <StarMarketbox></StarMarketbox>
         </FirstBox>
         </Container>
         </>
