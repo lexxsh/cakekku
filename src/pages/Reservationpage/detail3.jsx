@@ -157,6 +157,7 @@ margin: 10px;
 const ButtonBox = styled.div`
     display: flex;
     flex-direction: row;
+    margin-top:20px;
 `
 const detail3 = () => {
     return (
@@ -187,7 +188,6 @@ const detail3 = () => {
 
             <Container>
                 <Text>
-                    <br/>
                     주문이 거의 완료 되었습니다!<br/>
                     <br/>
                     결제 내역:<br/>

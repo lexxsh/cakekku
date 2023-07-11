@@ -137,6 +137,16 @@ const Container = styled.div`
   margin-top: 1rem;
 `;
 
+const Input = styled.textarea`
+  width: 90%;
+  height: 80%;
+  border: none;
+  font-size: 5px;
+  white-space: pre-line;
+  outline: none;
+  resize:none;
+`;
+
 const TagContainer = styled.div`
   flex-direction: row;
 `;
@@ -157,6 +167,12 @@ const Review2 = () => {
   navigate("/Myreview/review3");
 }
 
+
+const [reviewText, setReviewText] = useState('');
+
+const handleInputChange = (event) => {
+  setReviewText(event.target.value);
+};
 
   return (
     <>
@@ -214,7 +230,13 @@ const Review2 = () => {
 
         <ReviewText2>사진을 등록해주세요 <TextWrapper>(선택)</TextWrapper></ReviewText2>
         <ReviewText2>상세한 후기를 작성해주세요</ReviewText2>
-        <Container></Container>
+        <Container>
+  <Input
+    placeholder="주문하신 케이크의 후기를 남겨주시면 다른 구매자들에게도 도움이 됩니다."
+    value={reviewText}
+    onChange={handleInputChange}
+  />
+</Container>
         <Button
           Buttonwidth="328px"
           Buttonheight="40px"

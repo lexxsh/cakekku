@@ -157,6 +157,7 @@ margin: 10px;
 const ButtonBox = styled.div`
     display: flex;
     flex-direction: row;
+    margin-top:20px;
 `
 const detail4 = () => {
     return (
@@ -187,14 +188,14 @@ const detail4 = () => {
 
             <Container>
                 <Text>
-                    <br/>
+                <br/>
                     주문이 완료되었습니다.<br/>
                     <br/>
                     케이크가 준비중입니다.<br/>
                     문의가 필요하면<br/>
                     연락주세요!<br/>
                     <br/>
-                <br/>
+                
                 </Text>
             </Container>
             <ButtonBox>
