@@ -5,7 +5,7 @@ import { styled } from 'styled-components';
 import Layout from '../../components/Layout';
 import img from '../../Store_ex.png';
 import img2 from '../../pngwing 1.png';
-import StarRate from '../../components/Star';
+import StarReivew from '../../components/Star/StarReivew';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import Myreview from '../Myreview';

@@ -19,6 +19,7 @@ import Reservationdetail4 from "./pages/Reservationpage/detail4";
 import Review1 from "./pages/Reviewpage/review1"
 import Review2 from "./pages/Reviewpage/review2"
 import Review3 from "./pages/Reviewpage/review3"
+import DesignCake from "./pages/DesginCake/DesginCake";
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
         <Route path="/Myreview/review1" element={<Review1/>}/>
         <Route path="/Myreview/review2" element={<Review2/>}/>
         <Route path="/Myreview/review3" element={<Review3/>}/>
+        <Route path="/DesignCake" element={<DesignCake/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
