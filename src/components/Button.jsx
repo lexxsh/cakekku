@@ -41,7 +41,7 @@ const button = (props) => {
                 ButtonColor = {props.ButtonColor}
                 Buttonleft = {props.Buttonleft}
                 Buttontop = {props.Buttontop}
-                Buttonbottom = {props.Buttonbottom}
+                Buttonbottom = {props.Button}
                 Buttonopacity = {props.Buttonopacity}
                 Buttonanimation = {props.Buttonanimation}
                 Buttonborder = {props.Buttonborder}
@@ -49,7 +49,8 @@ const button = (props) => {
                 onClick={props.onClick}>
             <ButtonText
              textcolor = {props.textcolor}
-             fontsize={props.fontsize}>{props.text}</ButtonText>
+             text={props.text}>{props.text}
+             </ButtonText>
         </Button>
         </>
     );
