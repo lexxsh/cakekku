@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Button from "../Button";
 import { FaBox } from "react-icons/fa";
 import { BiSolidStore } from "react-icons/bi";
+import { useNavigate } from 'react-router-dom';
 
 const Pickup = styled.div`
     color: ${(props) => (props.color ? props.color : "black")};
@@ -47,6 +48,10 @@ const TextContainer3 = styled.div`
 
 
 function Storedetail() {
+    const navigate = useNavigate(); 
+    const navigatetoMain = () => {
+    navigate("/Order1");
+  }
     return (
       <>
         <Pickup>
@@ -84,7 +89,7 @@ function Storedetail() {
             Buttonleft = "300px"
             fontsize="11px"
             text="바로가기"
-            onClick={()=>alert("구현중 ㅎㅎ")}
+            onClick={navigatetoMain}
             >
             </Button>
             
