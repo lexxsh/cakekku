@@ -19,7 +19,7 @@ import Reservationdetail4 from "./pages/Reservationpage/detail4";
 import Review1 from "./pages/Reviewpage/review1"
 import Review2 from "./pages/Reviewpage/review2"
 import Review3 from "./pages/Reviewpage/review3"
-import DesignCake from "./pages/DesginCake/DesginCake";
+import DesignCake from "./pages/DesginCake/ColorButton";
 
 
 const App = () => {
