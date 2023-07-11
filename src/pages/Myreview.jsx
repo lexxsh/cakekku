@@ -5,6 +5,9 @@ import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Wrapper from '../components/Wrapper';
 import StarReivew from '../components/Star/StarReivew';
+import { useNavigate } from 'react-router-dom';
+
+
 const ReserBox = styled.div`
     display: flex;
     flex-direction: row;
@@ -37,24 +40,24 @@ const ReserButton = styled.div`
     height: 10px;
     flex-shrink: 0;
     color: #000;
-text-align: center;
-font-family: Inter;
-font-size: 13px;
-font-style: normal;
-font-weight: 600;
-line-height: 10px;
-letter-spacing: -0.5px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 10px;
+    letter-spacing: -0.5px;
 `
 const ReserTitle = styled.p`
     margin-bottom: -5px;
     color: #000;
 //text-align: center;
-font-family: Inter;
-font-size: 11px;
-font-style: normal;
-font-weight: 600;
-line-height: 20px;
-letter-spacing: -0.5px;
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.5px;
 `
 const ReserBody = styled.p`
 color: #747272;
@@ -78,6 +81,13 @@ line-height: 20px;
 letter-spacing: -0.5px;
 `
 const Myreview = () => {
+
+    const navigate = useNavigate(); 
+    const navigatetoMain = () => {
+    navigate("/Myreview/review1");
+  }
+
+
     return (
         <>
         <Layout color = '#FFF5E4'>
@@ -85,7 +95,7 @@ const Myreview = () => {
             <Wrapper Top="70px" Bottom="80px">
             <ReserBox>
                 <ReserImg></ReserImg>
-                <Reser1Box>
+                <Reser1Box onClick={navigatetoMain}>
                     <ReserButton>리뷰 쓰기</ReserButton>
                     <ReserTitle>케이크니</ReserTitle>
                     <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
@@ -95,7 +105,7 @@ const Myreview = () => {
             </ReserBox>
             <ReserBox>
                 <ReserImg></ReserImg>
-                <Reser1Box>
+                <Reser1Box onClick={navigatetoMain}>
                     <ReserButton>리뷰 쓰기</ReserButton>
                     <ReserTitle>케이크니</ReserTitle>
                     <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
@@ -105,7 +115,7 @@ const Myreview = () => {
             </ReserBox>
             <ReserBox>
                 <ReserImg></ReserImg>
-                <Reser1Box>
+                <Reser1Box onClick={navigatetoMain}>
                     <ReserButton>리뷰 쓰기</ReserButton>
                     <ReserTitle>케이크니</ReserTitle>
                     <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기

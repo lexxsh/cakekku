@@ -4,6 +4,9 @@ import Head2 from '../components/Heads/Head2';
 import Footer from '../components/Footer';
 import styled from 'styled-components';
 import Wrapper from '../components/Wrapper';
+import { useNavigate } from 'react-router-dom';
+
+
 const ReserBox = styled.div`
     display: flex;
     flex-direction: row;
@@ -77,6 +80,22 @@ line-height: 20px;
 letter-spacing: -0.5px;
 `
 const Reservation = () => {
+    const navigate = useNavigate(); 
+    const navigatetoMain = () => {
+  navigate("/Reservation/detail1");
+}
+
+const navigatetoMain2 = () => {
+  navigate("/Reservation/detail2");
+}
+
+const navigatetoMain3 = () => {
+  navigate("/Reservation/detail3");
+}
+  const navigatetoMain4 = () => {
+  navigate("/Reservation/detail4");
+}
+
     return (
         <>
         <Layout color = '#FFF5E4'>
@@ -84,48 +103,8 @@ const Reservation = () => {
             <Wrapper Top="70px" Bottom="80px">
             <ReserBox>
                 <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
-                    <ReserTitle>케이크니</ReserTitle>
-                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
-                    </ReserBody>
-                    <ReserDate>2022-13-24</ReserDate>
-                </Reser1Box>
-            </ReserBox>
-            <ReserBox>
-                <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
-                    <ReserTitle>케이크니</ReserTitle>
-                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
-                    </ReserBody>
-                    <ReserDate>2022-13-24</ReserDate>
-                </Reser1Box>
-            </ReserBox>
-            <ReserBox>
-                <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
-                    <ReserTitle>케이크니</ReserTitle>
-                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
-                    </ReserBody>
-                    <ReserDate>2022-13-24</ReserDate>
-                </Reser1Box>
-            </ReserBox>
-            <ReserBox>
-                <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
-                    <ReserTitle>케이크니</ReserTitle>
-                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
-                    </ReserBody>
-                    <ReserDate>2022-13-24</ReserDate>
-                </Reser1Box>
-            </ReserBox>
-            <ReserBox>
-                <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
+                <Reser1Box onClick={navigatetoMain}>
+                    <ReserButton >예약 대기</ReserButton>
                     <ReserTitle>케이크니</ReserTitle>
                     <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
                     </ReserBody>
@@ -135,8 +114,49 @@ const Reservation = () => {
 
             <ReserBox>
                 <ReserImg></ReserImg>
-                <Reser1Box>
-                    <ReserButton>예약 대기</ReserButton>
+                <Reser1Box onClick={navigatetoMain2}>
+                    <ReserButton>상담 대기</ReserButton>
+                    <ReserTitle>케이크니</ReserTitle>
+                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
+                    </ReserBody>
+                    <ReserDate>2022-13-24</ReserDate>
+                </Reser1Box>
+            </ReserBox>
+            <ReserBox>
+                <ReserImg></ReserImg>
+                <Reser1Box onClick={navigatetoMain3}>
+                    <ReserButton>결제 대기</ReserButton>
+                    <ReserTitle>케이크니</ReserTitle>
+                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
+                    </ReserBody>
+                    <ReserDate>2022-13-24</ReserDate>
+                </Reser1Box>
+            </ReserBox>
+            <ReserBox>
+                <ReserImg></ReserImg>
+                <Reser1Box onClick={navigatetoMain4}>
+                    <ReserButton>주문 완료</ReserButton>
+                    <ReserTitle>케이크니</ReserTitle>
+                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
+                    </ReserBody>
+                    <ReserDate>2022-13-24</ReserDate>
+                </Reser1Box>
+            </ReserBox>
+            <ReserBox>
+                <ReserImg></ReserImg>
+                <Reser1Box onClick={navigatetoMain}>
+                    <ReserButton>주문 완료</ReserButton>
+                    <ReserTitle>케이크니</ReserTitle>
+                    <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
+                    </ReserBody>
+                    <ReserDate>2022-13-24</ReserDate>
+                </Reser1Box>
+            </ReserBox>
+
+            <ReserBox>
+                <ReserImg></ReserImg>
+                <Reser1Box onClick={navigatetoMain}>
+                    <ReserButton>주문 완료</ReserButton>
                     <ReserTitle>케이크니</ReserTitle>
                     <ReserBody>종류: 도시락 케이크 <br/>추가옵션: 상혁이랑 놀기
                     </ReserBody>

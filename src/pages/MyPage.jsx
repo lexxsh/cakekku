@@ -70,8 +70,8 @@ const MyPage = () => {
             <MyBox>
                 <BsPersonCircle color="pink" size="70px" />
                 <MyBox1>
-                    <Mytext>장유선님 안녕하세요!</Mytext>
-                    <Myemail>john8538@naver.com</Myemail>
+                    <Mytext>로그인이 필요합니다</Mytext>
+                    <Myemail>*****@naver.com</Myemail>
                 </MyBox1>
             </MyBox>
             <MyBox2>
