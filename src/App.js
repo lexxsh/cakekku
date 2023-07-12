@@ -19,12 +19,10 @@ import Reservationdetail4 from "./pages/Reservationpage/detail4";
 import Review1 from "./pages/Reviewpage/review1"
 import Review2 from "./pages/Reviewpage/review2"
 import Review3 from "./pages/Reviewpage/review3"
-<<<<<<< HEAD
 import DesignCake from "./pages/DesginCake/ColorButton";
-=======
-import DesignCake from "./pages/DesginCake/DesginCake";
+
 import Order1 from "./pages/Orderpage/Order1";
->>>>>>> 261518bfe094436f9f030b018659b5628c339ce6
+
 
 
 const App = () => {
