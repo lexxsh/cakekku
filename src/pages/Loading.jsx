@@ -2,7 +2,9 @@ import React from 'react';
 import Layout from '../components/Layout';
 import { useNavigate } from 'react-router-dom';
 import Button from '../components/Button';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { useEffect } from 'react';
+import axios from 'axios';
 const LogoImg = styled.img`
     background-color: none;
     width:200px;
@@ -40,6 +42,16 @@ const Loading = () => {
     const navigatetoMain = () => {
     navigate("/Main");
 }
+useEffect(() => {
+    axios
+      .get(`https://cakekku.shop/logintempuser/`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
     return (
         <>
 
@@ -54,7 +66,7 @@ const Loading = () => {
             Buttonanimation ="fadeout 2s 3s ease-in forwards"
             Buttonopacity = "0"
             text="로그인하기"
-            onClick={()=>alert("둘러보기를 눌러주세요~!")}>
+            onClick={()=>alert("둘러보기를 눌러주세요~! 아직 구현중입니다ㅠㅠ")}>
             </Button>
         <Button
             Buttonwidth = "200px"

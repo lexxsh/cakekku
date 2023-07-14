@@ -1,23 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../components/Button';
-import  styled  from 'styled-components';
 
-const MaintopBox = styled.div`
-width: 370px;
-height: 130px;
-background-color: white;
-opacity: 50%;
-z-index: 0;
-margin: 0 auto;
-border-radius: 20px;
-margin-top: 15%;
-filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
-`
+const MainTop = ({setSort}) => {
+    const handleButtonClick = (buttonText) => {
+        let sortValue = '';
+        switch (buttonText) {
+            case '전체':
+                sortValue = '';
+              break;
+            case '리뷰 수':
+                sortValue = 'review_count';
+              break;
+            case '낮은 가격 순':
+                sortValue = 'lower_price';
+              break;
+            case '높은 가격 순':
+                sortValue = 'higher_price';
+                break;
+            case '별점 순':
+                sortValue = 'score';
+              break;
+            default:
+              break;
+        }
+        setSort(sortValue);
+        console.log(sortValue);
+    };
 
-const MainTop = () => {
     return (
-        <>
-            <Button
+        <>            
+        <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
             Buttontop = "40px"
@@ -25,10 +37,10 @@ const MainTop = () => {
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #FF9494"
             Buttonborderrad = "10px"
-            text="전체지역"
+            text="전체"
             textcolor = "#FF9494"
-            >
-            </Button>
+            onClick={() => handleButtonClick("전체")}
+            />
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
@@ -37,8 +49,10 @@ const MainTop = () => {
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
             Buttonborderrad = "10px"
-            text="모양"
-            textcolor = "#747272"></Button>
+            text="리뷰 수"
+            textcolor = "#747272"
+            onClick={() => handleButtonClick("리뷰 수")}
+            />
             <Button
             Buttonwidth = "70px"
             Buttonheight = "40px"
@@ -47,8 +61,10 @@ const MainTop = () => {
             ButtonColor="#FFFFFF"
             Buttonborder="1px solid #747272"
             Buttonborderrad = "10px"
-            text="크기"
-            textcolor = "#747272"></Button>
+            text="별점 순"
+            textcolor = "#747272"
+            onClick={() => handleButtonClick("별점 순")}
+            />
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
@@ -56,27 +72,23 @@ const MainTop = () => {
             Buttonleft = "85px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
-            text="쿠폰할인"
-            textcolor = "#FFFFFF"></Button>
+            text="낮은 가격 순"
+            textcolor = "#FFFFFF"
+            onClick={() => handleButtonClick("낮은 가격 순")}
+            />
             <Button
             Buttonwidth = "100px"
             Buttonheight = "40px"
             Buttontop = "90px"
-            Button
             Buttonleft = "195px"
             ButtonColor="#FF9494"
             Buttonborderrad = "20px"
-            text="주간랭킹"
-            ></Button>
-            <Button
-            Buttonwidth = "80px"
-            Buttonheight = "45px"
-            Buttontop = "90px"
-            Buttonleft = "300px"
-            ButtonColor="Transparent"
-            Buttonborderrad = "10px"
-            text="별점 순 👇"></Button>
-            </>
+            text="높은 가격 순"
+            textcolor = "#FFFFFF"
+            onClick={() => handleButtonClick("높은 가격 순")}
+            />
+        </>
+
     );
 };
 
