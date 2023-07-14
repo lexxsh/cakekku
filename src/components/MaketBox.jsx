@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { BiSortZA } from 'react-icons/bi';
+import { BiLike, BiSortZA } from 'react-icons/bi';
 import RatingStars from './Star/StarMaketbox';
 
 const FirstBox = styled.div`
@@ -24,7 +24,28 @@ const ImgBox = styled.div`
   background-size: cover;
   background-position: center;
 `
+const Circle = styled.div`
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+`
+const LikeButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top:30%;
+  left:30%;
+  font-size: 24px;
+  opacity: 70%;
+  z-index:5;
+`;
 
+const LikeIcon = styled(BiLike)`
+  color: ${(props) => (props.liked ? 'red' : 'inherit')};
+`;
 const Marketname = styled.p`
   margin: 0;
   position: absolute;
@@ -124,6 +145,8 @@ const Container = styled.div`
 const MarketBox = (props) => {
   const { index, sort } = props;
   const [infor, setInfor] = useState([]);
+  const [liked, setLiked] = useState(false); // State variable for liked state
+
   useEffect(() => {
     axios
       .get(`https://cakekku.shop/marketlist/?order=${sort}`)
@@ -136,17 +159,52 @@ const MarketBox = (props) => {
       });
   }, [sort]);
 
+  useEffect(() => {
+    if (infor.length === 0) {
+      return;
+    }
+
+    const marketData = infor[index];
+    
+    axios
+      .get(`https://cakekku.shop/checkislike/?store_id=${marketData.store_id}`)
+      .then((res) => {
+        console.log(res);
+        setLiked(res.data.message);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [infor, index]);
+
   if (infor.length === 0) {
     return null;
   }
 
   const marketData = infor[index];
   const imageUrl = `https://cakekku.shop${marketData.store_thumbnail_image}`;
-
- 
-
+  
+  
+  const handleLike = () => {
+    setLiked(prevLiked => !prevLiked); // Toggle the liked state
+  
+    axios
+      .post('https://cakekku.shop/marketlike/', {
+        store_id: marketData.store_id
+      })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
+  
   return (
     <>
+      <LikeButton onClick={handleLike}>
+      <Circle><LikeIcon liked={liked} /></Circle>
+      </LikeButton>
       <Link to={`/marketdetail/${marketData.store_id}`}>
         <Container Top={props.Top} Bottom={props.Bottom}>
           <FirstBox Firsttop={props.Firsttop}>

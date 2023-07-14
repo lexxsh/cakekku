@@ -51,6 +51,7 @@ const Review1 = () => {
             <TextWrapper>케이크니</TextWrapper>의 케이크 어땠나요?
           </ResTtitle>
           <StoreImg src={img} />
+          <StarReivew></StarReivew>
           <Button
             Buttonwidth="328px"
             Buttonheight="40px"

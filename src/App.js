@@ -28,6 +28,7 @@ import Searchresult5 from "./pages/SerchResult.jsx/Searchresult5";
 import Searchresultsi from "./pages/SerchResult.jsx/Searchresultsi";
 import MySearch from "./pages/SerchResult.jsx/MySearch";
 import DesignMain from "./pages/DesginCake/DesignMain";
+import Uploader from "./pages/DesginCake/Uploader";
 const App = () => {
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
@@ -64,6 +65,7 @@ const App = () => {
         <Route path="/Searchresult5" element={<Searchresult5/>}/>
         <Route path="/Searchresultsi" element={<Searchresultsi/>}/>
         <Route path="/MySearch" element={<MySearch/>}/>
+        <Route path="/Uploader" element={<Uploader/>}/>
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

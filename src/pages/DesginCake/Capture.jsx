@@ -1,7 +1,7 @@
 import html2canvas from 'html2canvas';
 import saveAs from 'file-saver';
 import { useRef } from 'react';
-
+import { Link } from 'react-router-dom';
 
 export default function App() {
   const divRef = useRef(null);
@@ -31,7 +31,7 @@ export default function App() {
     <div className="App">
       <div ref={divRef}>
       </div>
-      <button onClick={handleDownload}>다운로드</button>
+      <Link to = "/Uploader"><button onClick={handleDownload}>다운로드</button></Link>
     </div>
   );
 }

@@ -1,15 +1,10 @@
-import React from 'react';
-import { useState,  useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import review1 from './review1.jpg';
-import review2 from './review2.jpg';
-import review3 from './review3.jpg';
-import review4 from './review4.jpg';
-import review5 from './review5.jpg';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const FirstBox = styled.div`
   opacity: 90%;
@@ -30,7 +25,6 @@ const ImgBox = styled.div`
   border-radius: 30px;
   margin-top: 0rem;
   background-color: #ffd0e9;
-
 `;
 
 const ReviewDate = styled.div`
@@ -101,7 +95,7 @@ const SlideImage = styled.img`
   border-radius: 30px;
 `;
 
-function StoreReview() {
+function StoreReview({ index }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -109,44 +103,46 @@ function StoreReview() {
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  const [reviews, setReviews] = useState([]);
 
-  useEffect(()=>{
+  const { store_id } = useParams();
+  const [reviewList, setReviewList] = useState([]);
+  const [imgArr, setImgArr] = useState([]);
+
+  useEffect(() => {
     axios
-    .get(`https://cakekku.shop/marketreviewlist/?store_id=1`)
-    .then((res)=>{
-      console.log(res.data)
-    })
-    .catch((e)=>{
-      console.log(e)
-    })
-    },[]);
+      .get(`https://cakekku.shop/marketreviewlist/?store_id=${store_id}`)
+      .then((res) => {
+        console.log(res.data[0]);
+        setReviewList(res.data);
+        setImgArr([
+          `https://cakekku.shop${res.data[index].review_image1}`,
+          `https://cakekku.shop${res.data[index].review_image2}`,
+          `https://cakekku.shop${res.data[index].review_image3}`,
+          `https://cakekku.shop${res.data[index].review_image4}`,
+          `https://cakekku.shop${res.data[index].review_image5}`
+        ]);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, [index, store_id]);
 
-
+console.log(imgArr)
+console.log(reviewList)
   return (
     <>
       <FirstBox>
-        <ReviewDate>2023-07-13</ReviewDate>
+        <ReviewDate>{reviewList.length != 0 && reviewList[index].created_at}</ReviewDate>
         <ImgBox>
           <Slider {...settings}>
-            <div>
-              <SlideImage src={review1} alt="Review 1" />
-            </div>
-            <div>
-              <SlideImage src={review2} alt="Review 2" />
-            </div>
-            <div>
-              <SlideImage src={review3} alt="Review 3" />
-            </div>
-            <div>
-              <SlideImage src={review4} alt="Review 4" />
-            </div>
-            <div>
-              <SlideImage src={review5} alt="Review 5" />
-            </div>
+            {imgArr.filter((element) => element !== "https://cakekku.shopnull").map((eachImg, idx) => (
+              <div key={idx}>
+                <SlideImage src={eachImg} alt={`Review ${idx + 1}`} />
+              </div>
+            ))}
           </Slider>
         </ImgBox>
-        <ReviewContents>사장님 친절하시고 맛있어요 상담도 잘해주세요</ReviewContents>
+        <ReviewContents>{reviewList.length != 0 && reviewList[index].review_content}</ReviewContents>
         <HashBoxContainer>
           <HashBox>
             <Hashtag>#맛있어요</Hashtag>

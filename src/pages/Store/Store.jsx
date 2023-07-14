@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { AiFillStar } from 'react-icons/ai';
 import axios from 'axios';
+import RatingStars from './RatingStars';
 import { useParams } from 'react-router-dom';
-
 import Head from '../../components/Heads/Head2';
 import Storetag from '../../components/Store.jsx/Storetag';
 import Storedetail from '../../components/Store.jsx/Storedetail';
@@ -107,6 +107,19 @@ const MenuButtonWrapper = styled.div`
   justify-content: space-between;
 `;
 
+const Reviews = styled.div`
+  color: #FF9494;
+text-align: center;
+font-family: Inter;
+font-size: 11px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 200% */
+letter-spacing: -0.5px;
+margin-top:-6rem;
+margin-left:-2rem;
+padding:1rem;
+`
 const Store = () => {
   const [a, seta] = useState('menu');
   const { store_id } = useParams();
@@ -117,6 +130,7 @@ const Store = () => {
       .then((res) => {
         console.log(res);
         setInfor(res.data);
+        console.log(res.data.store_average_score)
       })
       .catch((e) => {
         console.log(e);
@@ -143,8 +157,22 @@ const Store = () => {
       window.removeEventListener('scroll', updateScroll);
     };
   }, []);
-  
 
+  const [reviewList, setReviewList] = useState([]);
+
+  useEffect(()=>{
+    axios.get(`https://cakekku.shop/marketreviewlist/?store_id=${store_id}`)
+    .then((res)=>{
+      console.log(res.data)
+      setReviewList(res.data);
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+},[]);
+  
+console.log(infor.store_average_score);
+console.log(infor);
   return (
     <>
       <Head />
@@ -152,14 +180,10 @@ const Store = () => {
       <Container>
         <Storename>
           {infor.store_name}
-          <StarContainer>
-            <AiFillStar color="#FF9494" size="16px" />
-            <AiFillStar color="#FF9494" size="16px" />
-            <AiFillStar color="#FF9494" size="16px" />
-            <AiFillStar color="#FF9494" size="16px" />
-            <AiFillStar color="#747272" size="16px" />
-          </StarContainer>
+ 
         </Storename>
+        <RatingStars rating ={infor.store_average_score}/>
+        <Reviews>({reviewList.length})</Reviews>
         <Storetag />
         <Address>{infor.store_address}</Address>
         <Storename>

@@ -28,9 +28,8 @@ const Main = () => {
         <MarketBox index={1} sort={sort}></MarketBox>
         <MarketBox index={2} sort={sort}></MarketBox>
         <MarketBox index={3} sort={sort}></MarketBox>
-        <MarketBox index={0} sort={sort}></MarketBox>
-        <MarketBox index={1} sort={sort}></MarketBox>
-        <MarketBox index={2} sort={sort}></MarketBox>
+        <MarketBox index={4} sort={sort}></MarketBox>
+        <MarketBox index={5} sort={sort}></MarketBox>
         </Wrapper>
         <Footer></Footer>
 

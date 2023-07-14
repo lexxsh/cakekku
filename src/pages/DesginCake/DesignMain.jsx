@@ -11,7 +11,7 @@ import Head2 from "../../components/Heads/Head2";
 import Footer from "../../components/Footer";
 import html2canvas from 'html2canvas';
 import saveAs from 'file-saver';
-
+import { Link } from "react-router-dom";
 const Title = styled.p`
   font-size: 20px;
   margin: 0 auto;
@@ -154,9 +154,9 @@ const DesignMain = () => {
           <PenIcon />
         </ColorPaletteButton>
 
-        <ColorPaletteButton onClick={handleDownload}>
+        <Link to = "/Uploader"> <ColorPaletteButton onClick={handleDownload}>
           <PictureIcon />
-        </ColorPaletteButton>
+        </ColorPaletteButton></Link>
       </MenuBox>
 
       {activeButton === "palette" && (

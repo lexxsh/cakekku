@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { IoMdColorPalette } from "react-icons/io";
 
 const Title = styled.p`
-  font-size: 20px;
+  font-size: 15px;
   margin: 0 auto;
   text-align: center;
-  margin-top: 20%;
+  margin-top: 10%;
 `;
 
 const MenuBox = styled.div`
@@ -352,6 +352,7 @@ const ColorButton = (props) => {
         <GreenColor5 onClick={greenColor5}></GreenColor5>
         <GreenColor6 onClick={greenColor6}></GreenColor6>
       </ColorBox>
+      <Title>원하는 케이크 색상을 추가해주세요!</Title>
     </>
   );
 };

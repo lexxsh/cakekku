@@ -7,6 +7,7 @@ import {BsPersonCircle} from "react-icons/bs";
 import StoreReview from './StoreReview';
 import { useEffect } from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const Reviewtext = styled.p`
   color: #000;
@@ -23,17 +24,30 @@ const Reviewtext = styled.p`
 `;
 
 
-const review = () =>{
-  
+const Review = () =>{
+  const {store_id} = useParams();
+  const [reviewList, setReviewList] = useState([]);
+
+  useEffect(()=>{
+    axios.get(`https://cakekku.shop/marketreviewlist/?store_id=${store_id}`)
+    .then((res)=>{
+      console.log(res.data)
+      setReviewList(res.data);
+    })
+    .catch((e)=>{
+      console.log(e)
+    })
+},[]);
+
     return (
         <>
-        <Reviewtext>이 스토어의 리뷰 4건</Reviewtext>
-        <StoreReview></StoreReview>
-        <StoreReview></StoreReview>
-        <StoreReview></StoreReview>
-        <StoreReview></StoreReview>
+        <Reviewtext>이 스토어의 리뷰 {reviewList.length}건</Reviewtext>
+        {reviewList.map((element,idx)=>{
+          return(<StoreReview index = {idx} ></StoreReview>)
+        })}
+        
         </>
     );
 }
 
-export default review
+export default Review
