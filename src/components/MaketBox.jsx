@@ -168,7 +168,7 @@ const MarketBox = (props) => {
           </FirstBox>
         </Container>
       </Link>
-    </>
+    </> 
   );
 };
 
