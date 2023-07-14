@@ -80,7 +80,7 @@ const Search = () => {
 
   const handleSearch = () => {
     // 검색 버튼 클릭 시 URL 파라미터에 검색어 추가하여 MySearch 페이지로 이동
-    const queryParams = new URLSearchParams({ sort: search });
+    const queryParams = new URLSearchParams({ search: search });
     console.log(queryParams);
     const url = `/Mysearch?${queryParams.toString()}`;
     window.location.href = url;
@@ -99,7 +99,7 @@ const Search = () => {
   return (
     <Layout color="#FFF5E4">
       <div className="ad">
-        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
+        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} required />
         <label>가게이름</label>
         <span className="sp"></span>
       </div>

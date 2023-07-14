@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { BiSortZA } from 'react-icons/bi';
-import StarMarketbox from './Star/StarMaketbox';
+import RatingStars from './Star/StarMaketbox';
 
 const FirstBox = styled.div`
   height: 140px;
@@ -13,7 +13,7 @@ const FirstBox = styled.div`
   border-radius: 30px;
   margin: 0 auto;
   filter: drop-shadow(0px 10px 24px rgba(99, 99, 99, 0.15));
-  overflow-x: hidden;
+  overflow: hidden;
 `
 
 const ImgBox = styled.div`
@@ -124,34 +124,17 @@ const Container = styled.div`
 const MarketBox = (props) => {
   const { index, sort } = props;
   const [infor, setInfor] = useState([]);
-  const [ratesResArr, setRatesResArr] = useState([0, 0, 0, 0, 0]);
-
   useEffect(() => {
     axios
       .get(`https://cakekku.shop/marketlist/?order=${sort}`)
       .then((res) => {
-        console.log(res);
         setInfor(res.data);
-        calcStarRates(res.data[index].store_average_score);
+        console.log(res);
       })
       .catch((e) => {
         console.log(e);
       });
   }, [sort]);
-
-  const calcStarRates = (avrRate) => {
-    let AVR_RATE = avrRate * 20;
-    let tempStarRatesArr = [0, 0, 0, 0, 0];
-    let starVerScore = (AVR_RATE * 70) / 100;
-    let idx = 0;
-    while (starVerScore > 14) {
-      tempStarRatesArr[idx] = 14;
-      idx += 1;
-      starVerScore -= 14;
-    }
-    tempStarRatesArr[idx] = starVerScore;
-    setRatesResArr(tempStarRatesArr);
-  };
 
   if (infor.length === 0) {
     return null;
@@ -181,8 +164,7 @@ const MarketBox = (props) => {
             <MarketPrice>
               기본 {marketData.store_lower_price} ~ {marketData.store_higher_price}
             </MarketPrice>
-            별점수{marketData.store_average_score}
-            <StarMarketbox avrRate={ratesResArr} />
+            <RatingStars rating={marketData.store_average_score} />
           </FirstBox>
         </Container>
       </Link>

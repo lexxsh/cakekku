@@ -4,7 +4,7 @@ import StarMarketbox from '../Star/StarMaketbox';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BiSortZA } from 'react-icons/bi';
+
 const FirstBox = styled.div`
     height: 140px;
     width:  330px;
@@ -120,12 +120,12 @@ const Container = styled.div`
 `
 
 const MySearchMarket = (props) => {
-    const {index,sort} = props;
+    const {index,search} = props;
     const [infor, setInfor] = useState([]);
-    console.log(sort);
+    console.log(search);
     useEffect(() => {
         axios
-          .get(`https://cakekku.shop/searchmarket/?search=${sort}`)
+          .get(`https://cakekku.shop/searchmarket/?search=${search}`)
           .then((res) => {
             console.log(res);
             setInfor(res.data);
@@ -134,7 +134,7 @@ const MySearchMarket = (props) => {
             console.log(e);
           });
 
-      }, [sort]);
+      }, [search]);
     
   
     // Wait until the infor array is populated with data

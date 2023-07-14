@@ -10,6 +10,11 @@ import TopWrapper from '../../components/TopWrapper';
 import { useState } from 'react';
 const Main = () => {
     const [sort, setSort] = useState('');
+
+    
+
+
+
     return ( 
         <>
         <Layout color = '#FFF5E4'>

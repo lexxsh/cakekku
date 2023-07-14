@@ -19,11 +19,7 @@ import Reservationdetail4 from "./pages/Reservationpage/detail4";
 import Review1 from "./pages/Reviewpage/review1"
 import Review2 from "./pages/Reviewpage/review2"
 import Review3 from "./pages/Reviewpage/review3"
-import DesignCake from "./pages/DesginCake/ColorButton";
 import Order1 from "./pages/Orderpage/Order1";
-import StickerDrag from "./pages/DesginCake/StickerDrag";
-import Draw from "./pages/DesginCake/Drawing";
-import Capture from "./pages/DesginCake/Capture";
 import Searchresult1 from "./pages/SerchResult.jsx/Searchresult1";
 import Searchresult2 from "./pages/SerchResult.jsx/Searchresult2";
 import Searchresult3 from "./pages/SerchResult.jsx/Searchresult3";
@@ -31,6 +27,7 @@ import Searchresult4 from "./pages/SerchResult.jsx/Searchresult4";
 import Searchresult5 from "./pages/SerchResult.jsx/Searchresult5";
 import Searchresultsi from "./pages/SerchResult.jsx/Searchresultsi";
 import MySearch from "./pages/SerchResult.jsx/MySearch";
+import DesignMain from "./pages/DesginCake/DesignMain";
 const App = () => {
   function setScreenSize() {
     let vh = window.innerHeight * 0.01;
@@ -58,11 +55,8 @@ const App = () => {
         <Route path="/Myreview/review1" element={<Review1/>}/>
         <Route path="/Myreview/review2" element={<Review2/>}/>
         <Route path="/Myreview/review3" element={<Review3/>}/>
-        <Route path="/DesignCake" element={<DesignCake/>}/>
+        <Route path="/DesignMain" element={<DesignMain/>}/>
         <Route path="/Order1" element={<Order1/>}/>
-        <Route path="/drag" element={<StickerDrag/>}/>
-        <Route path="/drawing" element={<Draw/>}/>
-        <Route path="/Capture" element={<Capture/>}/>
         <Route path="/Searchresult1" element={<Searchresult1/>}/>
         <Route path="/Searchresult2" element={<Searchresult2/>}/>
         <Route path="/Searchresult3" element={<Searchresult3/>}/>

@@ -1,14 +1,13 @@
 import html2canvas from 'html2canvas';
 import saveAs from 'file-saver';
 import { useRef } from 'react';
-import Uploader from './Uploader';
+
 
 export default function App() {
   const divRef = useRef(null);
 
   const handleDownload = async () => {
     if (!divRef.current) return;
-
     try {
       const div = divRef.current;
       const width = div.offsetWidth; // 원하는 가로 크기
@@ -33,7 +32,6 @@ export default function App() {
       <div ref={divRef}>
       </div>
       <button onClick={handleDownload}>다운로드</button>
-      <Uploader></Uploader>
     </div>
   );
 }

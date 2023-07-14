@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import Head2 from '../../components/Heads/Head2';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import MySearchbox from '../../components/Marketboxsearch/MySearchMarketbox';
+import axios from 'axios';
+import Wrapper from '../../components/Wrapper';
 
 const Box = styled.div`
   width: 350px;
@@ -25,17 +27,33 @@ const MySearch = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get('search');
-console.log( searchQuery);
+  console.log(searchQuery);
+  const [infor, setInfor] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://cakekku.shop/searchmarket/?search=${searchQuery}`)
+      .then((res) => {
+        console.log(res);
+        setInfor(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+
+  }, []);
+
   return (
     <>
       <Layout color="#FFF5E4">
         <Head2 />
-        <Box>
-          <MySearchbox index={0} sort={searchQuery} />
-          <MySearchbox index={1} sort={searchQuery} />
-          <MySearchbox index={2} sort={searchQuery} />
-          <MySearchbox index={3} sort={searchQuery} />
-        </Box>
+        <Wrapper Top='4rem'>
+        
+          {infor.map((item, index) => (
+            <MySearchbox key={index} index={index} search={searchQuery} />
+          ))}
+    
+        </Wrapper>
         <Footer />
       </Layout>
     </>

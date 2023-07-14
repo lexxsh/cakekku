@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import Head2 from '../../components/Heads/Head2';
 import Footer from '../../components/Footer';
 import styled from 'styled-components';
+import Capture from "./Capture";
 
 const defaultStyle = {
   border: '1px solid gray',
@@ -37,31 +38,31 @@ const MenuBox = styled.div`
 `;
 const Penbutton = styled.button`
   position: absolute;
-  top:55%;
-  left: 40%;;
+  top: 32rem;
+  left: 2rem;
 `
 const Pentitle = styled.p`
- position: absolute;
-  top:55%;
-  left: 50%;;
+  position: absolute;
+  top: 31rem;
+  left: 5rem;
 `
 const Erabutton = styled.button`
   position: absolute;
-  top:75%;
-  left: 40%;;
+  top: 38rem;
+  left: 2rem;
 `
 const Eratitle = styled.p`
- position: absolute;
-  top:75%;
-  left: 50%;;
+  position: absolute;
+  top: 37rem;
+  left: 7rem;
 `
-function Main() {
+
+function Drawing({ isActive, canvasRef, arrayRef, addItem }) {
   const [ctx, setCtx] = useState();
   const [isErasing, setIsErasing] = useState(false);
   const [penSize, setPenSize] = useState(3);
   const [eraserSize, setEraserSize] = useState(10);
   const [penColor, setPenColor] = useState('black'); // 추가: 펜 색상 상태 변수
-  const canvasRef = useRef(null);
   const canvasRef2 = useRef(null);
   const array = [];
 
@@ -70,11 +71,10 @@ function Main() {
     const context = canvas.getContext('2d');
     context.lineJoin = 'round';
     setCtx(context);
-  }, []);
+  }, [canvasRef]);
 
   useEffect(() => {
-    const canvas2 = canvasRef2.current;
-    const context2 = canvas2.getContext('2d');
+    const context2 = canvasRef2.current.getContext('2d');
     context2.lineJoin = 'round';
   }, []);
 
@@ -93,7 +93,7 @@ function Main() {
   const canvasEventListener = (event, type, canvas, context) => {
     let x, y;
     const rect = canvas.getBoundingClientRect();
-  
+
     if (type === 'down') {
       if (event.type.startsWith('mouse')) {
         x = event.clientX - rect.left;
@@ -149,20 +149,43 @@ function Main() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isActive) {
+      const canvas = canvasRef2.current;
+      const context = canvas.getContext('2d');
+
+      const handleMouseDown = (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        addItem({ id: Date.now(), x, y });
+      };
+
+      canvas.addEventListener('mousedown', handleMouseDown);
+
+      return () => {
+        canvas.removeEventListener('mousedown', handleMouseDown);
+      };
+    }
+  }, [isActive, addItem, canvasRef2]);
+
+  useEffect(() => {
+    // Save the drawing array to the arrayRef when it changes
+    arrayRef.current = array;
+  }, [array, arrayRef]);
+
   return (
     <>
-      <Head2></Head2>
-      <Title>나만의 케이크 꾸미기</Title>
       <div style={{ position: 'relative', textAlign: 'center' }}>
-        <Cake></Cake>
         <canvas
           ref={canvasRef}
           style={{
             ...defaultStyle,
             position: 'absolute',
-            top: '20%',
+            top: '-7.5rem',
             left: '50%',
             transform: 'translate(-50%, -50%)',
+            border: 'none'
           }}
           onMouseDown={(event) => canvasEventListener(event, 'down', canvasRef.current, ctx)}
           onMouseMove={(event) => canvasEventListener(event, 'move', canvasRef.current, ctx)}
@@ -177,9 +200,10 @@ function Main() {
           style={{
             ...defaultStyle,
             position: 'absolute',
-            top: '82%',
+            top: '-16.9rem',
             left: '50%',
             transform: 'translate(-50%, -50%)',
+            border: 'none'
           }}
           onMouseDown={(event) => canvasEventListener(event, 'down', canvasRef2.current, canvasRef2.current.getContext('2d'))}
           onMouseMove={(event) => canvasEventListener(event, 'move', canvasRef2.current, canvasRef2.current.getContext('2d'))}
@@ -190,7 +214,6 @@ function Main() {
           onTouchEnd={(event) => canvasEventListener(event, 'up', canvasRef2.current, canvasRef2.current.getContext('2d'))}
         />
       </div>
-      <MenuBox>메뉴 박스입니다.</MenuBox>
       <div className="container">
         <div>
           <Penbutton onClick={handlePenClick} position='absolute' top='50%'>Pen</Penbutton>
@@ -229,9 +252,8 @@ function Main() {
           </select>
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 }
 
-export default Main;
+export default Drawing;
