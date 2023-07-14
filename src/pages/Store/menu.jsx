@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const Menutext = styled.p`
   color: #000;
@@ -35,13 +38,39 @@ const MenuImg = styled.img`
 `;
 
 function Menu() {
+  const { store_id } = useParams();
+  const [infor, setInfor] = useState([]);
+  const [cake, setCake] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`https://cakekku.shop/marketdetail/${store_id}/`)
+      .then((res) => {
+        console.log(res);
+        setInfor(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`https://cakekku.shop/marketcakelist/?store_id=${store_id}`)
+      .then((res) => {
+        console.log(res);
+        setCake(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
+
   return (
     <>
       <Menutext>
         <br /><br />
-        외부 : 100% 필라델피아 크림치즈<br />
-        - 바탕색 1가지, 상단 레터링 기본<br />
-        (그 외 디자인에 따라 추가요금 발생)<br />
+        {infor.store_menu_content1}
         <br />
       </Menutext>
 
@@ -49,13 +78,7 @@ function Menu() {
         케이크 사이즈 선택<br />
       </Menutext2>
       <Menutext>
-        1. 도시락 (10cm/1인분 15000원부터)<br />
-        2. 미니 (12cm/2인분/30000원부터)<br />
-        3. 1호 (16cm/3-4인분/40000원부터)<br />
-        4. 2호 (19cm/4-6인분/52000원부터)<br />
-        5. 3호 (21cm/6-8인분/62000원부터)<br />
-        - 하트는 1호만 가능 +2000원<br />
-        - 2단케이크는 문의주세요<br />
+        {infor.store_menu_content2}
         <br />
       </Menutext>
 
@@ -63,25 +86,19 @@ function Menu() {
         빵 + 샌딩 선택<br />
       </Menutext2>
       <Menutext>
-        1. 바닐라빵 + 기본생크림 = 0원<br />
-        2. 초코빵 + 초코생크림 = 2000원 <br />
-        (크런키 추가+1000)<br />
-        3. 바닐라빵 + 루토스크림(커피쿠키) = 2000원<br />
-        4. 초코빵 + 오레오크림 = 3000원<br />
-        5. 바닐라빵 + 라즈베리크림 = 3000원<br />
+        {infor.store_menu_content3}
         <br />
       </Menutext>
       <Menutext2>
         고정디자인<br />
       </Menutext2>
-      <Menutext>1. 데이지 꽃 - 15000원</Menutext>
-      <MenuImg src='icon/Store_ex.png'></MenuImg>
-      <Menutext><br/>2.무지개 레터링 -16000원</Menutext>
-      <MenuImg src='icon/Store_ex.png'></MenuImg>
-      <Menutext><br/>3.촛불폼폼이 -17000원</Menutext>
-      <MenuImg src='icon/Store_ex.png'></MenuImg>
-      <Menutext><br/>4.스마일데이지 -16000원</Menutext>
-      <MenuImg src='icon/Store_ex.png'></MenuImg>
+
+      {cake.map((cakeItem) => (
+        <React.Fragment key={cakeItem.cake_id}>
+          <Menutext>{cakeItem.cake_id}. {cakeItem.cake_name} - {cakeItem.cake_price}원</Menutext>
+          <MenuImg src={`https://cakekku.shop${cakeItem.cake_image}`} />
+        </React.Fragment>
+      ))}
     </>
   );
 }

@@ -1,34 +1,23 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
 
-function StarMarketbox(props) {
-    const AVR_RATE = 4.3*20;
-    const STAR_IDX_ARR = ['first', 'second', 'third', 'fourth', 'last'];
-    const [ratesResArr, setRatesResArr] = useState([0, 0, 0, 0, 0]);
-    const calcStarRates = () => {
-        let tempStarRatesArr = [0, 0, 0, 0, 0];
-        let starVerScore = (AVR_RATE * 70) / 100;
-        let idx = 0;
-        while (starVerScore > 14) {
-            tempStarRatesArr[idx] = 14;
-            idx += 1;
-            starVerScore -= 14;
-        }
-        tempStarRatesArr[idx] = starVerScore;
-        return tempStarRatesArr;
-    };
-    useEffect(() => {
-        setRatesResArr(calcStarRates)
-    }, [])
+const STAR_IDX_ARR = ['first', 'second', 'third', 'fourth', 'last'];
+
+const StarMarketbox = (props) => {
+    const { avrRate } = props;
+    
+    console.log(avrRate);
+
     return (
         <StarRateWrap
           StarTop = {props.StarTop}
           Starleft = {props.Starleft}>
             {STAR_IDX_ARR.map((item, idx) => {
-                return <span className='star_icon' key={`${item}_${idx}`}>
+                return (
+                <span className='star_icon' key={`${item}_${idx}`}>
                     <svg xmlns='http://www.w3.org/2000/svg' width='20' height='39' viewBox='0 0 14 13' fill='#cacaca'>
                         <clipPath id={`${item}StarClip`}>
-                            <rect width={`${ratesResArr[idx]}`} height='39' />
+                            <rect width={`${avrRate[idx]}`} height='39' />
                         </clipPath>
                         <path
                             id={`${item}Star`}
@@ -39,6 +28,7 @@ function StarMarketbox(props) {
                         />
                     </svg>
                 </span>
+                )
             })
             }
         </StarRateWrap>
@@ -60,6 +50,4 @@ const StarRateWrap = styled.div`
         top:${(props) => (props.StarTop ? props.StarTop : "-13%")};
         left:${(props) => (props.Starleft ? props.Starleft : "48%")};
         z-index: 1;
-
-      
-`
+        `
