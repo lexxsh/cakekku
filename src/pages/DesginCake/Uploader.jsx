@@ -48,8 +48,8 @@ const Uploader = () => {
   const sendImageToServer = async () => {
     if (image.image_file) {
       const formData = new FormData();
-      formData.append('file', image.image_file);
-      await axios.post('/api/image/upload', formData);
+      formData.append('my_cake_image', image.image_file);
+      await axios.post('https://cakekku.shop/mycakecreate/', formData);
       alert("서버에 등록이 완료되었습니다!");
       setImage({
         image_file: "",

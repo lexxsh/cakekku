@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 import axios from 'axios';
 const ReserBox = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border-width: 0px 0px 5px 0px;
   border-style: solid;
   border-color: rgba(200, 200, 200, 0.80);
@@ -86,23 +87,21 @@ const ReservationBox = (props) => {
     
   };
   const [infor, setInfor] = useState([]);
-
+  const [marketData,SetmarketDate]= useState({});
   useEffect(() => {
     axios
       .get(`https://cakekku.shop/myorderlist/`)
       .then((res) => {
         console.log(res);
         setInfor(res.data);
+        SetmarketDate(res.data[index]); 
       })
       .catch((e) => {
         console.log(e);
       });
   }, []);
-  const marketData = infor[index]; 
-  console.log(index);
   return (
     <ReserBox>
-      <ReserImg></ReserImg>
       <Reser1Box onClick={handleClick}>
       <ReserButton status={marketData.order_stage}>
         {marketData.order_stage === 0 && '예약 대기'}

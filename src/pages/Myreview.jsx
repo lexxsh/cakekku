@@ -8,7 +8,7 @@ import StarReivew from '../components/Star/StarReivew';
 import axios from 'axios';
 import ReserBox from '../components/ReserBox';
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 const Myreview = () => {
   const [infor, setInfor] = useState([]);
 
@@ -34,10 +34,10 @@ const Myreview = () => {
       <Layout color="#FFF5E4">
         <Head2></Head2>
         <Wrapper Top="70px" Bottom="80px">
+        
         {infor.map((item, index) => (
             <ReserBox key={index} index={index} onClick={navigatetoMain}  />
           ))}
-          <StarReivew></StarReivew>
         </Wrapper>
         <Footer></Footer>
       </Layout>

@@ -6,6 +6,7 @@ import Wrapper from '../components/Wrapper';
 import axios from 'axios';
 import ReservationBox from '../components/ReservationBox';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Reservation = () => {
   const navigate = useNavigate();
