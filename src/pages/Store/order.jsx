@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 const Ordertext = styled.p`
   color: #000;
   text-align: center;
@@ -33,12 +35,24 @@ const OrderContainer = styled.div`
 `;
 
 function Order() {
+  const { store_id } = useParams();
+  const [infor, setInfor] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`https://cakekku.shop/marketdetail/${store_id}/`)
+      .then((res) => {
+        console.log(res);
+        setInfor(res.data);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }, []);
   return (
     <>
       <Ordertext>
         <br /><br />
-        * 주문서,도안,사진 첨부해주셔야 상담가능합니다.<br />
-        * 원하시는내용 모두 주문서에 작성해주세요.
+        {infor.store_order_form_content1}
       <br /><br />
       </Ordertext>
 
@@ -49,11 +63,7 @@ function Order() {
           <br />
         </Ordertext2>
         <Ordertext>
-          1. 케이크 크기 / 모양 선택 : <br />
-          2. 시트 + 샌딩(케이크 안 크림) 선택 : <br />
-          3. 케이크 배경 색상 : <br />
-          4. 케이크 상단 문구 : <br />
-          5. 케이크 하단 판 문구 (생략 시 빈칸) : <br />
+        {infor.store_order_form_content2}
         </Ordertext>
       </OrderContainer>
 
@@ -72,15 +82,7 @@ function Order() {
         <Ordertext>
           1. 케이크 크기 / 모양 선택  : 
           <br/>
-          2. 시트 + 샌딩(케이크 안 크림) 선택 :<br/>
-          1)바닐라+생크림 = +0원<br/>
-          2)초코+초코생크림 = +1000원<br/>
-          두가지 중에서만 선택가능<br/>
-          <br/>
-          3. 케이크 배경 색상 : <br/>
-          (샘플과 동일한 색상일 시 빈칸)<br/>
-
-          4. 케이크 상단 문구 : 
+          {infor.store_order_form_content3}
           <br/>
         </Ordertext>
       </OrderContainer>

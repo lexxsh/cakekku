@@ -1,7 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
-
-
+import axios from 'axios';
+import { useEffect } from 'react';
+import { useParams } from "react-router-dom";
 const HashBox = styled.div`
   display: inline-flex;
   align-items: center;
@@ -26,16 +27,26 @@ const Hashtag = styled.p`
 `;
 
 function Storedetail() {
+  const {store_id} = useParams();
+    const [infor,setInfor]=useState([]);
+    useEffect(()=>{
+        axios
+            .get(`https://cakekku.shop/marketdetail/${store_id}/`)
+            .then((res) => {
+                console.log(res);
+                setInfor(res.data);
+            })
+            .catch((e)=>{
+                console.log(e)
+            });
+        },[]);
   return (
     <>
       <HashBox>
-        <Hashtag>레터링 케이크</Hashtag>
+        <Hashtag>{infor.store_hashtag_1}</Hashtag>
       </HashBox>
       <HashBox>
-        <Hashtag>입체 케이크</Hashtag>
-      </HashBox>
-      <HashBox>
-        <Hashtag>생화 케이크</Hashtag>
+        <Hashtag>{infor.store_hashtag_2}</Hashtag>
       </HashBox>
     </>
   );

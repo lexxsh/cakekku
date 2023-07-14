@@ -7,25 +7,34 @@ import MarketBox from '../../components/MaketBox';
 import Head from '../../components/Heads/Head';
 import Wrapper from '../../components/Wrapper';
 import TopWrapper from '../../components/TopWrapper';
-import {Link} from 'react-router-dom';
+import { useState } from 'react';
 const Main = () => {
+    const [sort, setSort] = useState('');
+
+    
+
+
+
     return ( 
         <>
         <Layout color = '#FFF5E4'>
+        
         <Head></Head>
         <TopWrapper>
-        <MainTop></MainTop>
+        <MainTop setSort={setSort}></MainTop>
         </TopWrapper>
         <Wrapper>
-        <Link to = "/Store"><MarketBox></MarketBox></Link>
-        <MarketBox></MarketBox>
-        <MarketBox></MarketBox>
-        <MarketBox></MarketBox>
-        <MarketBox></MarketBox>
-        <MarketBox></MarketBox>
+        <MarketBox index={0} sort={sort}></MarketBox>
+        <MarketBox index={1} sort={sort}></MarketBox>
+        <MarketBox index={2} sort={sort}></MarketBox>
+        <MarketBox index={3} sort={sort}></MarketBox>
+        <MarketBox index={4} sort={sort}></MarketBox>
+        <MarketBox index={5} sort={sort}></MarketBox>
         </Wrapper>
         <Footer></Footer>
+
         </Layout>
+
         </>
     );
 };

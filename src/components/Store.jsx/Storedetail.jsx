@@ -4,7 +4,7 @@ import Button from "../Button";
 import { FaBox } from "react-icons/fa";
 import { BiSolidStore } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 const Pickup = styled.div`
     color: ${(props) => (props.color ? props.color : "black")};
     text-align: center;
@@ -97,17 +97,18 @@ function Storedetail() {
         
         </Pickup> 
         <Pickup color="#FF9494">직접디자인으로<Pickup>&nbsp;주문 및 예약</Pickup></Pickup>
+        <Link to = '/DesignMain'>
         <Button 
             Buttonwidth ="76px"
             Buttonheight = "16px"
-            ButtonColor="#FF9494"
+            ButtonColor="#FF9494" 
             Buttontop = " 792px"
             Buttonleft = "300px"
             fontsize="11px"
             text="바로가기"
-            onClick={()=>alert("구현중 ㅎㅎ")}
             >
             </Button>
+            </Link>
         <Pickup color="#FF9494">실시간 상담</Pickup>
         <Button 
             Buttonwidth ="76px"
