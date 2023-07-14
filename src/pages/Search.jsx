@@ -48,7 +48,7 @@ const Boxs = styled.div`
   width: 170px;
   height: 80px;
   text-align: center;
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
 `;
 
@@ -59,10 +59,14 @@ const Text = styled.p`
 const Boxgu = styled.div`
   width: 170px;
   height: 30px;
-  background-color: white;
+  background-color: transparent;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border: 1px solid grey;
+  text-align: center;
+  justify-content: center;
+  border-radius: 30px;
 `;
 
 const Boxtext = styled.p`
@@ -124,37 +128,37 @@ const Search = () => {
       </Box>
       <Box2 show={showBox2}>지원가능한 매장이 아직 없습니다 ㅠㅠ.</Box2>
       <Box3 show={showBox3}>
-        <Link to="/Searchresultsi">
+        <Link to="/Searchresultsi" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>인천</Boxtext>
             <Boxtext2>전체</Boxtext2>
           </Boxgu>
         </Link>
-        <Link to="/Searchresult1">
+        <Link to="/Searchresult1" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>남동구</Boxtext>
             <Boxtext2>구월, 논현</Boxtext2>
           </Boxgu>
         </Link>
-        <Link to="/Searchresult2">
+        <Link to="/Searchresult2" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>연수구</Boxtext>
             <Boxtext2>송도, 원인재</Boxtext2>
           </Boxgu>
         </Link>
-        <Link to="/Searchresult3">
+        <Link to="/Searchresult3" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>계양구</Boxtext>
             <Boxtext2>계산, 작전</Boxtext2>
           </Boxgu>
         </Link>
-        <Link to="/Searchresult4">
+        <Link to="/Searchresult4" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>부평구</Boxtext>
             <Boxtext2>삼산, 갈산</Boxtext2>
           </Boxgu>
         </Link>
-        <Link to="/Searchresult5">
+        <Link to="/Searchresult5" style={{ textDecoration: 'none' }}>
           <Boxgu>
             <Boxtext>미추홀구</Boxtext>
             <Boxtext2>주안, 용현</Boxtext2>

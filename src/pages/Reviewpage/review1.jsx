@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 import { styled } from 'styled-components';
 import Layout from '../../components/Layout';
 import img from '../../Store_ex.png';
-import StarReivew from '../../components/Star/StarReivew';
+import Starreview from '../../components/Star/StarReivew';
 import Button from '../../components/Button';
 import Review2 from './review2';
 import { useNavigate } from 'react-router-dom';
@@ -51,7 +51,7 @@ const Review1 = () => {
             <TextWrapper>케이크니</TextWrapper>의 케이크 어땠나요?
           </ResTtitle>
           <StoreImg src={img} />
-          <StarReivew></StarReivew>
+          <Starreview></Starreview>
           <Button
             Buttonwidth="328px"
             Buttonheight="40px"
